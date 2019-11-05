@@ -1,0 +1,321 @@
+.merch-preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 14px;
+    &__content {
+        position: relative;
+        width: 100%;
+        padding: 24px 20px 0;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: 0.3s ease;
+            box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.15);
+            display: block;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+        }
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    .merch-gallery {
+        z-index: 2;
+    }
+    @include media_1500 {
+        &__content {
+            padding: 18px 13px 0;
+        }
+    }
+    @include media_900 {
+        &__content {
+            border: 1px solid $gray4;
+            padding: 18px 18px 0;
+        }
+    }
+    @include media_550 {
+        padding: 0;
+        &__content {
+            padding: 19px 20px 0;
+        }
+    }
+}
+
+.merch-labels {
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        min-width: 80px;
+        border: 2px solid $green;
+        padding: 5px 10px 3px;
+        margin-bottom: 10px;
+        line-height: 1;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &_new {
+            border-color: $green;
+            color: $green;
+        }
+        &_hit {
+            border-color: $orange;
+            color: $orange;
+        }
+    }
+
+    &_big & {
+        &__item {
+            padding: 7px 21px;
+            height: auto;
+        }
+    }
+    @include media_1500 {
+        &__item {
+            height: 23px;
+            min-width: 0;
+            padding: 6px 13px 4px;
+            margin-bottom: 5px;
+        }
+        &_big & {
+            &__item {
+                padding: 8px 26px;
+            }
+        }
+    }
+    @include media_900 {
+        height: auto;
+        &__item {
+            height: auto;
+            padding: 6px 18px 4px;
+        }
+    }
+    @include media_550 {
+        &__item {
+            padding: 7px 19px 5px;
+        }
+    }
+}
+.merch-gallery {
+    $root: &;
+    position: relative;
+
+    &__preview {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 12px;
+        width: 39px;
+        .slick-list {
+            padding: 0 !important;
+        }
+        @include slider-preload($root, "preview-item");
+    }
+    &__body {
+        @include slider-preload($root, "body-item");
+    }
+    &__preview-item {
+        cursor: pointer;
+        padding: 3px 0;
+    }
+    .object-fit-wrap {
+        &:after {
+            padding-top: 100%;
+        }
+    }
+    .slick-arrow {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        top: auto;
+        width: auto;
+        height: auto;
+        padding: 5px;
+        &:before {
+            content: "\e90b";
+            opacity: 1;
+            display: block;
+            font-family: $ico-font;
+            font-size: 12px;
+            color: $gray4;
+        }
+        &.slick-prev {
+            bottom: calc(100% - 3px);
+            &:before {
+                transform: scaleY(-1);
+            }
+        }
+        &.slick-next {
+            top: calc(100% - 3px);
+        }
+    }
+    &__body-item {
+        padding: 40px 40px 15px;
+    }
+    &__product-link {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__img-wrapper {
+        position: relative;
+    }
+    &__btn-wrapper {
+        z-index: 2;
+        position: absolute;
+        left: 0;
+        top: 0;
+        cursor: pointer;
+        transition: 0.3s ease;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        .btn-style {
+            width: 100%;
+            max-width: 177px;
+            &__wrapper {
+                padding: 0 5px;
+            }
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__content {
+        margin-top: 11px;
+        text-align: center;
+    }
+    &__description {
+        margin-top: 14px;
+        color: $gray;
+    }
+    &__price-block {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+    &__price-item {
+        margin: 0 5px;
+        &:after {
+            content: attr(data-currency);
+        }
+        &_old {
+            text-decoration: line-through;
+            color: $gray;
+        }
+    }
+    &__body-item:hover & {
+        &__product-link {
+            opacity: 1;
+        }
+    }
+    @include media_1500 {
+        &__preview {
+            left: 4px;
+            width: 30px;
+        }
+        &__btn-wrapper {
+            padding: 0;
+        }
+        &__content {
+            margin-top: 18px;
+        }
+        &__description {
+            margin-top: 11px;
+        }
+        &__price-block {
+            margin-top: 7px;
+        }
+    }
+    @include media_1200 {
+        &__body-item {
+            padding: 34px 15px 5px;
+        }
+        &__img-block {
+            padding: 0 25px;
+        }
+        &__content {
+            margin-top: 26px;
+        }
+        &__price-block {
+            margin-top: 5px;
+        }
+    }
+    @include media_900 {
+        &__body-item {
+            padding: 45px 0 22px;
+        }
+        &__preview {
+            top: 25px;
+            width: 35px;
+        }
+        .slick-arrow {
+            &.slick-prev {
+                bottom: calc(100% + 6px);
+            }
+            &.slick-next {
+                top: calc(100% + 6px);
+            }
+        }
+        &__img-block {
+            padding: 0 42px;
+        }
+        &__btn-wrapper {
+            pointer-events: none;
+        }
+        &__content {
+            margin-top: 24px;
+        }
+        &__price-block {
+            margin-top: 13px;
+        }
+    }
+    @include media_550 {
+        &__body-item {
+            padding: 50px 0 22px;
+        }
+        &__img-block {
+            padding: 0 51px;
+        }
+        &__content {
+            margin-top: 31px;
+        }
+        &__description {
+            margin-top: 9px;
+        }
+        &__price-block {
+            margin-top: 8px;
+        }
+        &__price-item {
+            font-size: 14px;
+        }
+    }
+}

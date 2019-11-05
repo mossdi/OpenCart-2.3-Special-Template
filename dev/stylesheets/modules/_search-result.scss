@@ -1,0 +1,65 @@
+.search-result {
+    &__top {
+        padding: 37px 0 50px;
+        text-align: center;
+    }
+    &__title {
+        width: calc(100% / 12 * 10);
+        margin: 0 auto;
+    }
+    &__search-count {
+        margin-top: 18px;
+        color: $gray2;
+        &:before {
+            content: "\e901";
+            margin-right: 12px;
+            font-family: $ico-font;
+            font-size: 18px;
+        }
+    }
+    @include media_1500 {
+        &__top {
+            padding: 15px 0 50px;
+        }
+        &__search-count {
+            margin-top: 13px;
+            &:before {
+                margin-right: 12px;
+                font-size: 14px;
+            }
+        }
+    }
+    @include media_1200 {
+        &__top {
+            padding: 0 0 40px;
+        }
+        &__search-count {
+            margin-top: 10px;
+        }
+    }
+    @include media_900 {
+        &__search-count {
+            margin-top: 14px;
+            &:before {
+                font-size: 13px;
+            }
+        }
+        .catalog-row {
+            &__btn-wrapper {
+                width: 100%;
+            }
+        }
+    }
+    @include media_550 {
+        &__top {
+            padding-bottom: 50px;
+        }
+        &__search-count {
+            margin-top: 8px;
+            &:before {
+                margin-right: 4px;
+                font-size: 12px;
+            }
+        }
+    }
+}

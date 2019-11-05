@@ -1,0 +1,32 @@
+- 
+    advantages = [
+        {
+            "icon":"images/1.svg",
+            "text":"<span>Бесплатная доставка</span> от любой суммы по РФ и СНГ"
+        },
+        {
+            "icon":"images/2.svg",
+            "text":"<span>Возможность выбора</span> До 3х позиций на выбор"
+        },
+        {
+            "icon":"images/3.svg",
+            "text":"<span>Прямые поставки</span> от производителей и официальных дистрибьюторов"
+        },
+        {
+            "icon":"images/4.svg",
+            "text":"<span>Скидки и дополнительные программы</span> лояльности для зарегистрированных пользователей"
+        },
+        {
+            "icon":"images/5.svg",
+            "text":"<span>Оплата.</span> Удобные способы оплаты"
+        }
+       
+    ]
+    
++b.advantages
+    +e.H2.title Наши преимущества
+    +e.inner
+        each item in advantages
+            +e.item
+                +object_fit({src:item.icon,mod:"_contain",lazy:true})
+                +e.P.text.p4!=item.text

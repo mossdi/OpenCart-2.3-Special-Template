@@ -1,0 +1,63 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    &__arrow {
+        transition: 0.3s ease;
+        padding: 5px 0;
+        color: $black;
+        &:hover {
+            color: $orange;
+        }
+        &_next {
+            margin-left: 20px;
+        }
+        &_prev {
+            margin-right: 20px;
+        }
+    }
+    &__link {
+        border: 1px solid $gray5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s ease;
+        width: 40px;
+        height: 40px;
+        margin: 0 6px;
+        color: $gray5;
+        &_active,
+        &:hover {
+            background-color: $gray2;
+            border-color: $gray2;
+            color: $white;
+        }
+        &_dots {
+            pointer-events: none;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    @include media_1500 {
+        &__link {
+            width: 40px;
+            height: 32px;
+            margin: 0 7px;
+        }
+    }
+    @include media_550 {
+        &__link {
+            width: 35px;
+            height: 28px;
+            margin: 0 5px;
+        }
+        &__arrow {
+            &_next {
+                margin-left: 14px;
+            }
+            &_prev {
+                margin-right: 14px;
+            }
+        }
+    }
+}

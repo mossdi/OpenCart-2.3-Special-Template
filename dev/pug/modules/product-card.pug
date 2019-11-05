@@ -1,0 +1,106 @@
+-
+    props = [
+        {
+            label: 'Модель',
+            val: 'AL1663/108'
+        },
+        {
+            label: 'Пол',
+            val: 'Мужчины'
+        },
+        {
+            label: 'Материал',
+            val: 'Натуральная кожа'
+        },
+        {
+            label: 'Размер, см',
+            val: '25 см'
+        }
+    ]
+
+    soc = [
+        {
+            icon:"facebook-logo"
+        },
+        {
+            icon:"vk"
+        },
+        {
+            icon:"instagram"
+        },
+        {
+            icon:"twitter"
+        }
+    ]
+    title = productCardTitle ? productCardTitle : 'ASHWOOD'
+
++b.product-card
+    +e.col._left
+        +b.product-slider-full.js-product-slider-full
+            -for (var i = 0; i < 10; i++)
+                +e.item
+                    +b.merch-labels._big
+                        +e.item(class="_new h5") Новинка
+
+                    +e.img-wrap
+                        +e.IMG.img(data-lazy='media/product-card/slider/product-card-1.jpg')
+
+        +b.product-slider-nav.js-product-slider-nav
+            -for (var i = 0; i < 10; i++)
+                +e.item
+                    +e.img-wrap
+                        +e.IMG.img(data-lazy='media/product-card/slider/product-card-1_preview.jpg').js-object-fit
+
+    +e.separate
+
+    +e.col._right
+        +b('form').product-info.js-card-form.js-custom-ajax.js-form-adjuster(action="add-to-cart.php")
+            input.pseudo-hidden(name="productId",type="hidden",value="123")
+            +e.row._1of2-tablet
+                +e.H2.title !{title}
+                p.p3 Рюкзак Ashwood Leather 1663 Chestnut
+
+            +e.row._1of2-tablet
+                +b.color-picker.js-body-click-close
+                    +e.btn.js-color-picker-btn
+                    +e.list
+                        -for (var i = 0; i < 12; i++)
+                            -
+                                mod = i == 0 ? ' _active' : ''
+                            +e.item(data-url='product-card.php', class=mod).js-product-color-btn
+                                +e.img-wrap
+                                    +e.img(src='media/product-card/colors/product-color-1.png')
+
+            +e.row
+                +b.add-to-card
+                    +e.col._left
+                        +b.stock-status(class=' _in-stock')
+                            +e.SPAN.text.p4 В наличии
+
+                        +b.price-block
+                            +e.SPAN.price.p1 15 000 руб.
+                            +e.SPAN.price.p3(class=' _old') 18 000 руб.
+
+
+                    +e.col._right
+                        +btn({title:"В корзину", button: true})
+
+            +e.row._1of2-tablet
+                +e.H5.subtitle ХАРАКТЕРИСТИКИ
+
+                +b.properties
+                    each item in props
+                        +e.row
+                            +e.label
+                                span.p4 !{item.label}
+                            +e.val
+                                span.p4 !{item.val}
+
+            +e.row._1of2-tablet
+                +e.H5.subtitle ПОДЕЛИТЬСЯ С ДРУЗЬЯМИ
+
+                +b.social-list._black
+                    each item in soc
+                        +e.item(href="#",title="")
+                            +e.I.icon(class="icon-" + item.icon)
+

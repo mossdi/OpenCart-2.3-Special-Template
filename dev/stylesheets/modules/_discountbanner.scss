@@ -1,0 +1,79 @@
+.discountbanner {
+    position: relative;
+
+    .object-fit-wrap {
+        &:after {
+            padding-top: 33.2%;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title {
+        color: $white;
+        opacity: 1;
+        transition: $transition;
+    }
+
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: $transition;
+        pointer-events: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    img {
+        filter: grayscale(100%);
+        transition: $transition;
+    }
+
+    &:hover & {
+        &__title {
+            opacity: 0;
+            transition: $transition;
+        }
+
+        &__link {
+            opacity: 1;
+            transition: $transition;
+            pointer-events: auto;
+        }
+    }
+
+    &:hover {
+        img {
+            filter: grayscale(0%);
+            transition: $transition;
+        }
+    }
+    @include media_900 {
+        .object-fit-wrap {
+            &:after {
+                padding-top: 46.6%;
+            }
+        }
+    }
+    @include media_550 {
+        .object-fit-wrap {
+            &:after {
+                padding-top: 71.6%;
+            }
+        }
+    }
+}

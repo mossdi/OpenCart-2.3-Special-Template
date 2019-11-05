@@ -1,0 +1,23 @@
++b('section').contacts
+    +b.title-block
+        +e.H1.title Контакты
+    +b.contact-list       
+        +e.item
+            +e.I.icon.icon-telephone
+            +e.content
+                +e.H4.title По всем вопросам
+                +e.P.text.p5 Телефон горячей линии
+                +e.link.h4(href="tel:+79775177482",title="Позвонить") 8 (977) 517-74-82
+                +e.P.schedule.p5 ежедневно с 10:00 до 18:00 (обработка заказов)
+        +e.separator
+        +e.item
+            +e.I.icon.icon-mail
+            +e.content
+                +e.P.label.p3b E-mail
+                +e.link.h4(href="mailto:e-commerce@shoprukzak.ru",title="Написать") e-commerce@shoprukzak.ru
+        +e.separator
+        +e.item
+            +e.I.icon.icon-info
+            +e.content._column
+                +btn({title:"ВОзврат товара",href:"typical.html"})
+                +btn({title:"Доставка",href:"shipping-and-payment.html"})

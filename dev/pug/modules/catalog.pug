@@ -1,0 +1,18 @@
++b('section').catalog(class=catalog_mod?catalog_mod:"")
+    if title
+        .title-block
+            +e.H1.title=title
+    if brand
+        +breadcrumbs({path:[{link:"brands.html",text:"Бренды"},{text:"Ashwood"}]})
+        include brand-page-block
+    +e.content
+        +e.col._filter.js-popup-filter.js-popup
+            include filter
+        +e.col._content
+            if !brand
+                include brands
+                
+            include catalog-body
+            
+                
+

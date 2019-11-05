@@ -1,0 +1,43 @@
+- 
+    category = [
+        {
+            "image":"backpack.jpg",
+            "link":"",
+            "title":"рюкзаки"
+        },
+        {
+            "image":"bags.jpg",
+            "link":"",
+            "title":"Сумки"
+        },
+        {
+            "image":"accessories.jpg",
+            "link":"",
+            "title":"АксессуАры"
+        },
+        {
+            "image":"belts.jpg",
+            "link":"",
+            "title":"Ремни"
+        },
+        {
+            "image":"folders.jpg",
+            "link":"",
+            "title":"Папки для документов"
+        },
+        {
+            "image":"briefcases.jpg",
+            "link":"",
+            "title":"Портфели"
+        }
+    ]
+
++b.category-showcase
+    each item in category
+        +e.item
+            +e.img
+                +object_fit({src:`images/${item.image}`,lazy:true})
+            +e.content
+                +e.H3.title= item.title
+                +e.link
+                    +btn({title:'перейти в раздел',mod:'_white',href:item.link != ''?item.link:'catalog.html'})

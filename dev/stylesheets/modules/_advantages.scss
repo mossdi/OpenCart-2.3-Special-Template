@@ -1,0 +1,99 @@
+.advantages {
+    padding-top: 96px;
+    padding-bottom: 100px;
+    &__title {
+        text-align: center;
+        margin-bottom: 83px;
+    }
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .object-fit-wrap {
+        width: 100%;
+        max-width: 150px;
+        margin: 0 auto;
+        &:after {
+            padding-top: 100%;
+        }
+    }
+    &__item {
+        width: 18%;
+        text-align: center;
+    }
+    &__text {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+    @include media_1500 {
+        padding-top: 86px;
+        padding-bottom: 93px;
+        &__title {
+            margin-bottom: 54px;
+        }
+        .object-fit-wrap {
+            max-width: 120px;
+        }
+        &__text {
+            margin-top: 14px;
+        }
+    }
+    @include media_1200 {
+        padding-top: 79px;
+        padding-bottom: 83px;
+        &__title {
+            margin-bottom: 42px;
+        }
+        &__inner {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 0 29px;
+        }
+        &__item {
+            width: calc(100% / 3 - 40px);
+            margin: 34px 20px 0;
+            &:nth-of-type(-n + 3) {
+                margin-top: 0;
+            }
+        }
+    }
+    @include media_900 {
+        padding-top: 77px;
+        padding-bottom: 77px;
+        &__inner {
+            padding: 0 38px;
+        }
+        &__item {
+            width: calc(100% / 2 - 40px);
+            margin-top: 40px;
+            &:nth-of-type(-n + 3) {
+                margin-top: 40px;
+            }
+            &:nth-of-type(-n + 2) {
+                margin-top: 0;
+            }
+        }
+    }
+    @include media_550 {
+        padding-top: 58px;
+        padding-bottom: 60px;
+        &__title {
+            margin-bottom: 32px;
+        }
+        &__inner {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 20px;
+        }
+        &__item {
+            max-width: 240px;
+            width: 100%;
+            margin: 33px auto 0 !important;
+            &:first-child {
+                margin-top: 0 !important;
+            }
+        }
+    }
+}

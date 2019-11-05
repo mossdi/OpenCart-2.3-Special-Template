@@ -1,0 +1,23 @@
+-
+    facts = [{
+        number:"2 000",
+        text:"моделей было продано за прошлый год"
+    },{
+        number:"150",
+        text:"Lorem ipsum dolor"
+    },{
+        number:"200",
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing"
+    },{
+        number:"35",
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing"
+    }]
+
++b('section').facts
+    +e.H2.title Несколько фактов в цифрах
+    +b.facts-list
+        each item in facts
+            +e.item
+                +e.P.number.h3=item.number
+                +e.SPAN.separator
+                +e.P.text.p3=item.text

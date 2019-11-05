@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10;IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+    <title>Title</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="images/favicon/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+    <header class="header js-header">
+        <div class="header__overlay js-overlay-header">
+        </div>
+        <div class="header__wrapper">
+            <div class="container"><a class="logo" href="/" title="Главная"><img src="images/logo.svg"></a>
+                <div class="hamburger js-hamburger">
+                    <div class="hamburger__bar">
+                    </div>
+                </div>
+                <div class="controls-header">
+                    <div class="controls-header__item"><a class="controls-header__link js-call-search" href="#" title=""><i class="controls-header__icon icon-search"></i></a>
+                    </div>
+                    <div class="controls-header__item js-touch-relative">
+                        <!-- _active if number of products in the cart more then 0--><a class="controls-header__link controls-header__link_cart _active" href="cart.html" title=""><i class="controls-header__icon icon-basket" data-count="1"></i></a>
+                        <div class="controls-header__popup">
+                            <div class="controls-header__popup-content">
+                                <!--render header-cart-popup or header-cart-empty if cart is empty-->
+                                <div class="header-cart-popup">
+                                    <div class="header-cart-popup__list js-custom-scroll">
+                                        <div class="header-cart-list">
+                                            <div class="header-cart-list__item"><a class="merch-preview-small" href="product-card.html" title="Страница товара"><span class="merch-preview-small__col merch-preview-small__col_img"><span class="object-fit-wrap object-fit-wrap_contain"><span class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="media/product/ashwood.jpg" alt="" role="presentation" /></span></span></span><span class="merch-preview-small__col merch-preview-small__col_content">
+                                                        <p class="merch-preview-small__name p6">ASHWOOD
+                                                        </p>
+                                                        <p class="merch-preview-small__description p7">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <p class="merch-preview-small__params p7" data-text="Цвет">Коричневый
+                                                        </p>
+                                                    </span><span class="merch-preview-small__col merch-preview-small__col_price">
+                                                        <p class="merch-preview-small__price p8" data-currency="руб.">15000
+                                                        </p>
+                                                    </span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="header-cart-popup__bottom">
+                                        <div class="header-cart-popup__wrapper">
+                                            <p class="header-cart-popup__total-title p7">Сумма заказа
+                                            </p>
+                                            <p class="header-cart-popup__total p9" data-currency="руб">30000
+                                            </p>
+                                        </div><a class="btn-style btn-style_small" href="cart.html" title="ПЕРЕЙТИ К ОФОРМЛЕНИЮ"><span class="btn-style__wrapper"><span class="btn-style__text">ПЕРЕЙТИ К ОФОРМЛЕНИЮ</span></span></a>
+                                    </div>
+                                </div>
+                                <div class="header-cart-empty">
+                                    <p class="header-cart-empty__text p5">Ваша корзина пуста
+                                    </p><img class="header-cart-empty__img" src="images/svg/cart-empty-icon.svg" alt="" role="presentation" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="controls-header__item">
+                        <!-- _active for logged in user-->
+                        <!-- link work as link when element haven't class "_active"--><a class="controls-header__link js-call-popup js-btn-relative-active" href="#" title="" data-popup="{&quot;target&quot;:&quot;auth&quot;}"><i class="controls-header__icon icon-login"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="header__search-popup js-search-popup">
+                <form class="header-search-form">
+                    <div class="header-search-form__content">
+                        <div class="header-search-form__input-wrapper"><i class="header-search-form__icon icon-search"></i><input class="header-search-form__input h4" type="text" name="search" placeholder="Что вы ищите?" />
+                        </div>
+                        <button class="btn-style btn-style_transparent btn-style_big"><span class="btn-style__wrapper"><span class="btn-style__text">Найти</span></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="container">
+                <div class="menu__wrapper">
+                    <nav class="nav">
+                        <div class="nav__item">
+                            <h3 class="nav__title js-menu-category">Каталог<i class="nav__title-icon icon-down-arrow"></i>
+                            </h3>
+                            <div class="nav__list">
+                                <div class="nav__back b1 js-menu-back"><i class="nav__back-icon icon-down-arrow"></i>Назад
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Рюкзаки">Рюкзаки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Сумки">Сумки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Портфели">Портфели</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Папки для документов">Папки для документов</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Барсетки">Барсетки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Клатчи">Клатчи</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Ремни">Ремни</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Аксессуары">Аксессуары</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Рюкзаки">Рюкзаки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Сумки">Сумки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Портфели">Портфели</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Папки для документов">Папки для документов</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Барсетки">Барсетки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Клатчи">Клатчи</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Ремни">Ремни</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Аксессуары">Аксессуары</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Рюкзаки">Рюкзаки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Сумки">Сумки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Портфели">Портфели</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Папки для документов">Папки для документов</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Барсетки">Барсетки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Клатчи">Клатчи</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Ремни">Ремни</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Аксессуары">Аксессуары</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Рюкзаки">Рюкзаки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Сумки">Сумки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Портфели">Портфели</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Папки для документов">Папки для документов</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Барсетки">Барсетки</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Клатчи">Клатчи</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Ремни">Ремни</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="catalog.html" title="Аксессуары">Аксессуары</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav__item">
+                            <h3 class="nav__title js-menu-category">Покупателю<i class="nav__title-icon icon-down-arrow"></i>
+                            </h3>
+                            <div class="nav__list">
+                                <div class="nav__back b1 js-menu-back"><i class="nav__back-icon icon-down-arrow"></i>Назад
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="shipping-and-payment.html" title="Доставка / оплата">Доставка / оплата</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="typical.html" title="Оферта">Оферта</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="typical.html" title="Возврат товара">Возврат товара</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="brands.html" title="Бренды">Бренды</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="stock.html" title="Акции">Акции</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav__item">
+                            <h3 class="nav__title js-menu-category">О нас<i class="nav__title-icon icon-down-arrow"></i>
+                            </h3>
+                            <div class="nav__list">
+                                <div class="nav__back b1 js-menu-back"><i class="nav__back-icon icon-down-arrow"></i>Назад
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="about-company.html" title="О компании">О компании</a>
+                                </div>
+                                <div class="nav__list-item"><a class="nav__link" href="contacts.html" title="Контакты и Реквизиты">Контакты и Реквизиты</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="container">
+            <section class="catalog">
+                <div class="breadcrumbs">
+                    <div class="breadcrumbs__item"><a class="breadcrumbs__link p3b" href="brands.html">Бренды</a>
+                    </div>
+                    <div class="breadcrumbs__item"><span class="breadcrumbs__current p3">Ashwood</span>
+                    </div>
+                </div>
+                <div class="brand-page-block">
+                    <div class="brand-page-block__col brand-page-block__col_content">
+                        <h2 class="brand-page-block__title">ASHWOOD
+                        </h2>
+                        <p class="brand-page-block__text p3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+                        </p>
+                    </div>
+                    <div class="brand-page-block__col brand-page-block__col_logo">
+                        <div class="object-fit-wrap object-fit-wrap_contain">
+                            <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img js-lazy-load" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/brands/ashwood.jpg" alt="" data-mob-url="media/brands/ashwood.jpg" role="presentation" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__content">
+                    <div class="catalog__col catalog__col_filter js-popup-filter js-popup">
+                        <form class="filter" id="form-filter" action="" type="">
+                            <div class="cross-btn js-close-popup"></div>
+                            <div class="filter__content">
+                                <div class="filter__item">
+                                    <h4 class="filter__title">пол
+                                    </h4>
+                                    <!-- data-max - this is the maximum number of items shown until the button(show-more) appears (default in js = 5).-->
+                                    <div class="filter__check-list js-more-block">
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="gender" value="Женщины" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Женщины
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="gender" value="Мужчины" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Мужчины
+                                                </p>
+                                            </div>
+                                        </div><span class="show-more p5 js-show-more" data-show="Показать еще" data-cut="Свернуть"></span>
+                                    </div>
+                                </div>
+                                <div class="filter__item">
+                                    <h4 class="filter__title">МАТЕРИАЛ
+                                    </h4>
+                                    <div class="filter__check-list js-more-block">
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Натуральная кожа" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Натуральная кожа
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Искусственная кожа" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Искусственная кожа
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Канвас" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Канвас
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Кордура" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Кордура
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Полиэстр" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Полиэстр
+                                                </p>
+                                            </div>
+                                        </div><span class="show-more p5 js-show-more" data-show="Показать еще" data-cut="Свернуть"></span>
+                                    </div>
+                                </div>
+                                <div class="filter__item">
+                                    <h4 class="filter__title">ЦВЕТ
+                                    </h4>
+                                    <div class="filter__check-list js-more-block">
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Бежевый" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Бежевый
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Бежевый перламутр" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Бежевый перламутр
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Белое золото" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Белое золото
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Белый" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Белый
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Белый" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Белый
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Бежевый" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Бежевый
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Бежевый перламутр" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Бежевый перламутр
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Белое золото" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Белое золото
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Белый" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Белый
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="filter__check-item js-more-item">
+                                            <div class="checkbox-style"><input class="checkbox-style__input" type="checkbox" name="material" value="Белый" /><span class="checkbox-style__indicator"></span>
+                                                <p class="checkbox-style__label p4">Белый
+                                                </p>
+                                            </div>
+                                        </div><span class="show-more p5 js-show-more" data-show="Показать еще" data-cut="Свернуть"></span>
+                                    </div>
+                                </div>
+                                <div class="filter__item">
+                                    <h4 class="filter__title">ЦЕНА
+                                    </h4>
+                                    <div class="range-block js-range-module"><input class="range-block__input js-range-input" name="price" type="text" data-type="double" data-min="1200" data-max="15000" data-from="1200" data-to="15000" data-hide-from-to="true" data-postfix=" руб." />
+                                        <div class="range-block__input-row">
+                                            <div class="input-style"><input class="input-style__input input-style__input_range js-number-only js-range-price-from js-range-input-number p3" name="priceFrom" type="text" />
+                                                <div class="input-style__line">
+                                                </div>
+                                            </div><span class="range-block__separator"></span>
+                                            <div class="input-style"><input class="input-style__input input-style__input_range js-number-only js-range-price-to js-range-input-number p3" name="priceTo" type="text" />
+                                                <div class="input-style__line">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter__item filter__item_controls">
+                                    <div class="filter__btn-wrapper">
+                                        <button class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">Применить</span></span>
+                                        </button>
+                                    </div>
+                                    <div class="filter__btn-wrapper">
+                                        <div class="btn-style btn-style_transparent btn-style_small js-form-reset"><span class="btn-style__wrapper"><span class="btn-style__text">Сбросить</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="catalog__col catalog__col_content">
+                        <div class="catalog-row">
+                            <div class="catalog-row__btn-wrapper catalog-row__btn-wrapper_filter">
+                                <div class="btn-icon js-call-popup" data-popup='{"target":"filter"}'>
+                                    <div class="btn-icon__wrapper">
+                                        <p class="btn-icon__text p4">Фильтр
+                                        </p><i class="btn-icon__icon icon-filter"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-row__btn-wrapper">
+                                <div class="btn-icon js-call-popup" data-popup='{"target":"sort"}'>
+                                    <div class="btn-icon__wrapper">
+                                        <p class="btn-icon__text p4">Сортировка
+                                        </p><i class="btn-icon__icon icon-sorting"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-parameters catalog-parameters_sort js-popup-sort js-popup">
+                                <div class="cross-btn js-close-popup"></div>
+                                <div class="catalog-parameters__wrapper">
+                                    <div class="catalog-parameters__item">
+                                        <div class="catalog-show">
+                                            <p class="catalog-show__title p4">Показать:
+                                            </p>
+                                            <div class="catalog-show__list">
+                                                <div class="catalog-show__list-item">
+                                                    <div class="checkbox-number"><input class="checkbox-number__input" type="radio" name="showBy" value="30" checked="checked" />
+                                                        <p class="checkbox-number__label b2">30
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="catalog-show__list-item">
+                                                    <div class="checkbox-number"><input class="checkbox-number__input" type="radio" name="showBy" value="50" />
+                                                        <p class="checkbox-number__label b2">50
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="catalog-show__list-item">
+                                                    <div class="checkbox-number"><input class="checkbox-number__input" type="radio" name="showBy" value="100" />
+                                                        <p class="checkbox-number__label b2">100
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="catalog-parameters__wrapper">
+                                    <div class="catalog-parameters__item">
+                                        <div class="checkbox-style checkbox-style_right checkbox-style_dark"><input class="checkbox-style__input" type="checkbox" name="onlyInStock" value="Только в наличии" form="filter-form" /><span class="checkbox-style__indicator"></span>
+                                            <p class="checkbox-style__label p4">Только в наличии
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="catalog-parameters__item">
+                                        <div class="catalog-parameters__select-wrapper">
+                                            <div class="select-module select-module_small-container select-module_filled js-select-module js-body-click-close">
+                                                <select class="select-module__select pseudo-hidden js-select-module-select" name="sort">
+                                                    <option value="по популярности">по популярности</option>
+                                                    <option value="по популярности">по популярности</option>
+                                                    <option value="по популярности">по популярности</option>
+                                                    <option value="по популярности">по популярности</option>
+                                                    <option value="по популярности">по популярности</option>
+                                                    <option value="по популярности">по популярности</option>
+                                                    <option value="по популярности">по популярности</option>
+                                                </select>
+                                                <div class="select-module__input-container js-select-module-container"><span class="select-module__placeholder js-select-module-placeholder p3"></span><span class="select-module__text-block js-select-module-text-block p3"></span>
+                                                </div>
+                                                <div class="select-module__line">
+                                                </div>
+                                                <div class="select-module__dropdown">
+                                                    <div class="select-module__scroll js-select-module-scrollbar js-select-module-options">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog-list">
+                            <div class="catalog-list__item">
+                                <div class="merch-preview">
+                                    <div class="merch-preview__content">
+                                        <div class="merch-gallery js-merch-gallery">
+                                            <div class="merch-gallery__preview js-slider-merch-preview">
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="merch-gallery__body js-slider-merch-body">
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#1" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#2" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                        <div class="merch-labels__item merch-labels__item_hit p4b">Хит
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey Ashwood Leather
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1350
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#3" title="Страница товара"></a>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey2
+                                                        </h5>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">768
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#4" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">999999
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">999999
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-list__item">
+                                <div class="merch-preview">
+                                    <div class="merch-preview__content">
+                                        <div class="merch-gallery js-merch-gallery">
+                                            <div class="merch-gallery__preview js-slider-merch-preview">
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="merch-gallery__body js-slider-merch-body">
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#1" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#2" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                        <div class="merch-labels__item merch-labels__item_hit p4b">Хит
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey Ashwood Leather
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1350
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#3" title="Страница товара"></a>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey2
+                                                        </h5>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">768
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#4" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">999999
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">999999
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-list__item">
+                                <div class="merch-preview">
+                                    <div class="merch-preview__content">
+                                        <div class="merch-gallery js-merch-gallery">
+                                            <div class="merch-gallery__preview js-slider-merch-preview">
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="merch-gallery__body js-slider-merch-body">
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#1" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#2" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                        <div class="merch-labels__item merch-labels__item_hit p4b">Хит
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey Ashwood Leather
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1350
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#3" title="Страница товара"></a>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey2
+                                                        </h5>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">768
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#4" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">999999
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">999999
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-list__item">
+                                <div class="merch-preview">
+                                    <div class="merch-preview__content">
+                                        <div class="merch-gallery js-merch-gallery">
+                                            <div class="merch-gallery__preview js-slider-merch-preview">
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="merch-gallery__body js-slider-merch-body">
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#1" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#2" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                        <div class="merch-labels__item merch-labels__item_hit p4b">Хит
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey Ashwood Leather
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1350
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#3" title="Страница товара"></a>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey2
+                                                        </h5>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">768
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#4" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">999999
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">999999
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-list__item">
+                                <div class="merch-preview">
+                                    <div class="merch-preview__content">
+                                        <div class="merch-gallery js-merch-gallery">
+                                            <div class="merch-gallery__preview js-slider-merch-preview">
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle.jpg" alt="" data-lazy="media/product/rectangle.jpg" data-mob-url="media/product/rectangle.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__preview-item">
+                                                    <div class="object-fit-wrap object-fit-wrap_contain">
+                                                        <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/rectangle2.jpg" alt="" data-lazy="media/product/rectangle2.jpg" data-mob-url="media/product/rectangle2.jpg" role="presentation" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="merch-gallery__body js-slider-merch-body">
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#1" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#2" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                        <div class="merch-labels__item merch-labels__item_hit p4b">Хит
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey Ashwood Leather
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">1350
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">1500
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#3" title="Страница товара"></a>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;1&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey2
+                                                        </h5>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">768
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="merch-gallery__body-item"><a class="merch-gallery__product-link" href="#4" title="Страница товара"></a>
+                                                    <div class="merch-labels">
+                                                        <div class="merch-labels__item merch-labels__item_new p4b">Новинка
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__img-block">
+                                                        <div class="merch-gallery__img-wrapper">
+                                                            <div class="object-fit-wrap object-fit-wrap_contain">
+                                                                <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-url="media/product/ashwood.jpg" alt="" data-lazy="media/product/ashwood.jpg" data-mob-url="media/product/ashwood.jpg" role="presentation" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="merch-gallery__btn-wrapper js-call-popup" data-popup="{&quot;target&quot;:&quot;quick-view&quot;,&quot;id&quot;:&quot;2&quot;,&quot;category&quot;:&quot;123&quot;,&quot;action&quot;:&quot;quick-view.php&quot;}">
+                                                                <div class="btn-style btn-style_small"><span class="btn-style__wrapper"><span class="btn-style__text">быстрый просмотр</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="merch-gallery__content">
+                                                        <h5 class="merch-gallery__name">Ashwood Leather Harvey
+                                                        </h5>
+                                                        <p class="merch-gallery__description p4">Рюкзак Ashwood Leather 1663 Chestnut
+                                                        </p>
+                                                        <div class="merch-gallery__price-block">
+                                                            <div class="merch-gallery__price-item p2" data-currency="p.">999999
+                                                            </div>
+                                                            <div class="merch-gallery__price-item merch-gallery__price-item_old p2" data-currency="p.">999999
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog-row catalog-row_bottom">
+                            <div class="catalog-parameters catalog-parameters_bottom">
+                                <div class="catalog-parameters__wrapper">
+                                    <div class="catalog-show">
+                                        <p class="catalog-show__title p4">Показать:
+                                        </p>
+                                        <div class="catalog-show__list">
+                                            <div class="catalog-show__list-item">
+                                                <div class="checkbox-number"><input class="checkbox-number__input" type="radio" name="showBySecond" value="30" checked="checked" />
+                                                    <p class="checkbox-number__label b2">30
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="catalog-show__list-item">
+                                                <div class="checkbox-number"><input class="checkbox-number__input" type="radio" name="showBySecond" value="50" />
+                                                    <p class="checkbox-number__label b2">50
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="catalog-show__list-item">
+                                                <div class="checkbox-number"><input class="checkbox-number__input" type="radio" name="showBySecond" value="100" />
+                                                    <p class="checkbox-number__label b2">100
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="catalog-parameters__wrapper">
+                                    <div class="pagination">
+                                        <div class="pagination__link pagination__link_active b2">1
+                                        </div><a class="pagination__link b2" href="#">2</a><a class="pagination__link b2" href="#">3</a>
+                                        <div class="pagination__link pagination__link_dots b2">...
+                                        </div><a class="pagination__link b2" href="#">15</a><a class="pagination__arrow pagination__arrow_next b2" href="#">Далее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer__row footer__row_top">
+            <div class="container _top _start">
+                <div class="footer__col footer__col_2 footer__col_logo"><a class="logo-footer" href="/" title="Главная"><img class="logo-footer__img" src="images/logo/logo-white.svg" alt="" role="presentation" /></a>
+                </div>
+                <div class="footer__col footer__col_2">
+                    <div class="footer-nav-item js-footer-nav-item">
+                        <h4 class="footer-nav-item__title js-footer-nav-btn">Помощь
+                        </h4>
+                        <div class="footer-nav-item__list js-footer-nav-list">
+                            <div class="footer-nav-item__wrapper"><a class="footer-nav-item__item p4" href="shipping-and-payment.html" title="Доставка / Оплата">Доставка / Оплата</a><a class="footer-nav-item__item p4" href="typical.html" title="Оферта">Оферта</a><a class="footer-nav-item__item p4" href="typical.html" title="Вовзврат товара">Вовзврат товара</a><a class="footer-nav-item__item p4" href="brands.html" title="Бренды">Бренды</a><a class="footer-nav-item__item p4" href="stock.html" title="Акции">Акции</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__col footer__col_2">
+                    <div class="footer-nav-item js-footer-nav-item">
+                        <h4 class="footer-nav-item__title js-footer-nav-btn">О НАС
+                        </h4>
+                        <div class="footer-nav-item__list js-footer-nav-list">
+                            <div class="footer-nav-item__wrapper"><a class="footer-nav-item__item p4" href="about-company.html" title="О комании">О комании</a><a class="footer-nav-item__item p4" href="contacts.html" title="Контакты и Реквизиты">Контакты и Реквизиты</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__col footer__col_2">
+                    <div class="footer-nav-item js-footer-nav-item">
+                        <h4 class="footer-nav-item__title js-footer-nav-btn">ЛИЧНЫЙ КАБИНЕТ
+                        </h4>
+                        <div class="footer-nav-item__list js-footer-nav-list">
+                            <div class="footer-nav-item__wrapper"><a class="footer-nav-item__item p4" href="#" title="Мои данные">Мои данные</a><a class="footer-nav-item__item p4" href="#" title="Мои заказы">Мои заказы</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__col footer__col_3">
+                    <div class="payment-footer">
+                        <h4 class="payment-footer__title">СПОСОБЫ ОПЛАТЫ
+                        </h4>
+                        <div class="payment-footer__list">
+                            <div class="payment-footer__item"><img class="payment-footer__img" src="images/logo/visa-pay.svg" alt="" role="presentation" />
+                            </div>
+                            <div class="payment-footer__item"><img class="payment-footer__img" src="images/logo/mastercard.svg" alt="" role="presentation" />
+                            </div>
+                            <div class="payment-footer__item"><img class="payment-footer__img" src="images/logo/yandex-pay.svg" alt="" role="presentation" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__row footer__row_middle">
+            <div class="container">
+                <div class="footer__contacts"><a class="footer__phone h3" href="tel:+79775177482" title="">8 (977) 517-74-82</a><a class="footer__email p4" href="mailto:e-commerce@shoprukzak.ru" title="">e-commerce@shoprukzak.ru</a>
+                </div>
+                <div class="join-us">
+                    <h3 class="join-us__title">ПРИСОЕДИНЯЙТЕСЬ К НАМ
+                    </h3>
+                    <div class="social-list"><a class="social-list__item" href="#" title=""><i class="social-list__icon icon-facebook-logo"></i></a><a class="social-list__item" href="#" title=""><i class="social-list__icon icon-vk"></i></a><a class="social-list__item" href="#" title=""><i class="social-list__icon icon-instagram"></i></a><a class="social-list__item" href="#" title=""><i class="social-list__icon icon-twitter"></i></a>
+                    </div>
+                </div>
+                <form class="subscribe js-form-adjuster js-form-subscribe" action="form-handler.php">
+                    <h4 class="subscribe__title">ПОДПИСАТЬСЯ НА РАССЫЛКУ
+                    </h4>
+                    <div class="subscribe__row">
+                        <div class="subscribe__item subscribe__item_input">
+                            <div class="input-style"><input class="input-style__input required usermail p3" name="email" type="text" placeholder="Ваш e-mail" />
+                                <div class="input-style__line">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subscribe__item subscribe__item_btn">
+                            <button class="btn-style btn-style_black btn-style_medium"><span class="btn-style__wrapper"><span class="btn-style__text">ПОДПИСАТЬСЯ</span></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="footer__row footer__row_bottom">
+            <div class="container">
+                <p class="footer__copyright p4">© 2019, SHOPRUKZAK - Все права защищены
+                </p><a class="footer__privacy p4" href="pdf/confidentiality.pdf" title="Политика конфиденциальности" target="_blank">Политика конфиденциальности</a><a class="tutmee" href="http://tutmee.ru/" title="tutmee" target="_blank"><span class="tutmee__text p5">LTD TutMee Web<br>development Agency</span><span class="tutmee__svg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-272 383.1 49.3 76.8">
+                            <path class="tutmee_log_svg0" d="M-247.4 383.1c-6.8 0-13 2.8-17.4 7.2-4.4 4.5-7.2 10.6-7.2 17.4 0 2.9.5 5.8 1.5 8.4.3.9.7 1.7 1.1 2.5.8-1.1 1.6-2 2.5-3 1.7-1.7 3.6-3.1 5.7-4.3-.3-1.2-.5-2.4-.5-3.7 0-3.9 1.6-7.5 4.2-10.1s6.2-4.2 10.1-4.2c3.9 0 7.5 1.6 10.1 4.2s4.2 6.2 4.2 10.1c0 1.7-.3 3.4-.8 4.8-.6 1.6-1.4 3-2.4 4.3-2.5 3-6.4 6.8-10.1 10.3l-.9.9-1-.9c-1.6-1.6-3.3-3.2-4.9-4.8-1.6.7-3 1.7-4.2 2.9-1.3 1.3-2.3 2.8-3 4.4 1.6 1.6 3.3 3.2 4.9 4.9 1.1 1 2.1 2.1 4.5 4.5l3.7 3.7 3.7-3.7c1.8-1.8 3.1-3 4.5-4.3 3.8-3.7 7.9-7.6 10.9-11.2 1.8-2.2 3.2-4.6 4.2-7.3.9-2.6 1.5-5.4 1.5-8.3 0-6.8-2.8-13-7.2-17.4-4.7-4.5-10.9-7.3-17.7-7.3z" />
+                            <path class="tutmee_log_svg1" d="M-247.4 410.6c-6.8 0-13 2.8-17.4 7.2-4.4 4.5-7.2 10.7-7.2 17.5 0 6.8 2.8 13 7.2 17.4 4.5 4.5 10.6 7.2 17.4 7.2 6.8 0 13-2.8 17.4-7.2 4.5-4.5 7.2-10.6 7.2-17.4 0-5.1-1.6-9.9-4.2-13.8-.4.6-.9 1.3-1.4 1.9-1.7 2-3.7 4.2-5.9 6.3.7 1.7 1.1 3.6 1.1 5.6 0 3.9-1.6 7.5-4.2 10.1-2.6 2.6-6.2 4.2-10.1 4.2-3.9 0-7.5-1.6-10.1-4.2s-4.2-6.2-4.2-10.1 1.6-7.5 4.2-10.1 6.2-4.2 10.1-4.2c1 0 2 .1 3 .3 2.2-2.1 4.2-4.2 5.7-6 .6-.7 1.2-1.6 1.6-2.4-3-1.5-6.5-2.3-10.2-2.3z" /></svg></span></a>
+            </div>
+        </div>
+    </footer>
+    <div class="overlay js-overlay">
+    </div>
+    <div class="popup-style popup-style_subscribe js-popup js-popup-subscribe">
+        <div class="popup-style__content">
+            <div class="cross-btn js-close-popup">
+            </div>
+            <div class="popup-style__content-wrapper">
+                <div class="popup-subscribe">
+                    <div class="popup-subscribe__col popup-subscribe__col_img">
+                    </div>
+                    <div class="popup-subscribe__col popup-subscribe__col_content">
+                        <form class="popup-form js-form-adjuster js-form-subscribe" action="form-handler.php">
+                            <h3 class="popup-form__title">Просто подпишись на нашу рассылку
+                            </h3>
+                            <div class="popup-form__column">
+                                <div class="popup-form__item">
+                                    <div class="input-style input-style_small-label input-style_black">
+                                        <p class="input-style__label p4">E-mail*
+                                        </p><input class="input-style__input required usermail p3" name="email" type="text" />
+                                        <div class="input-style__line">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popup-form__item">
+                                    <button class="btn-style"><span class="btn-style__wrapper"><span class="btn-style__text">подписаться</span></span>
+                                    </button>
+                                </div>
+                                <div class="popup-form__item">
+                                    <div class="checkbox-style checkbox-style_bordered"><input class="checkbox-style__input required" type="checkbox" name="privicy" value="Y" /><span class="checkbox-style__indicator"></span>
+                                        <p class="checkbox-style__label p4">Нажимая "ПОДПИСАТЬСЯ", я соглашаюсь с <a href="pdf/confidentiality.pdf" target="_blank">политикой конфиденциальности</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-style popup-style_subscribe js-popup js-popup-subscribe-thx js-popup-type-thx">
+        <div class="popup-style__content">
+            <div class="cross-btn js-close-popup">
+            </div>
+            <div class="popup-style__content-wrapper">
+                <div class="popup-subscribe popup-subscribe_thx">
+                    <div class="popup-subscribe__col popup-subscribe__col_img">
+                    </div>
+                    <div class="popup-subscribe__col popup-subscribe__col_content">
+                        <h3 class="popup-subscribe__title">Спасибо, что подписались!
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-style popup-style_auth js-popup js-popup-auth">
+        <div class="popup-style__content">
+            <div class="cross-btn cross-btn_white js-close-popup">
+            </div>
+            <div class="popup-style__content-wrapper">
+                <div class="auth-popup">
+                    <div class="auth-popup__nav">
+                        <div class="auth-popup__nav-item h3 js-auth-nav _active">вход
+                            <div class="auth-popup__nav-line">
+                            </div>
+                        </div>
+                        <div class="auth-popup__nav-item h3 js-auth-nav">РЕГИСТРАЦИЯ
+                            <div class="auth-popup__nav-line">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="auth-popup-body js-auth-slider">
+                        <div class="auth-popup-body__item">
+                            <form class="popup-form popup-form_auth js-form-adjuster" action="form-handler.php">
+                                <div class="popup-form__column">
+                                    <div class="popup-form__item">
+                                        <div class="input-style input-style_small-label input-style_black">
+                                            <p class="input-style__label p4">E-mail*
+                                            </p><input class="input-style__input required usermail p3" name="email" type="text" />
+                                            <div class="input-style__line">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <div class="input-style input-style_small-label input-style_black">
+                                            <p class="input-style__label p4">Пароль*
+                                            </p><input class="input-style__input required p3" name="password" type="password" />
+                                            <div class="input-style__line">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <div class="checkbox-style checkbox-style_bordered"><input class="checkbox-style__input" type="checkbox" name="remember" value="Y" /><span class="checkbox-style__indicator"></span>
+                                            <p class="checkbox-style__label p4">Запомнить меня
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <button class="btn-style"><span class="btn-style__wrapper"><span class="btn-style__text">ВОЙТИ В ЛИЧНЫЙ КАБИНЕТ</span></span>
+                                        </button><a class="btn-style btn-style_transparent" href="reset-password.html" title="Забыли пароль?"><span class="btn-style__wrapper"><span class="btn-style__text">Забыли пароль?</span></span></a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="auth-popup-body__item">
+                            <form class="popup-form popup-form_auth js-form-adjuster" action="form-handler.php">
+                                <div class="popup-form__column">
+                                    <div class="popup-form__item">
+                                        <div class="input-style input-style_small-label input-style_black">
+                                            <p class="input-style__label p4">Имя*
+                                            </p><input class="input-style__input required p3" name="name" type="text" />
+                                            <div class="input-style__line">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <div class="input-style input-style_small-label input-style_black">
+                                            <p class="input-style__label p4">Фамилия*
+                                            </p><input class="input-style__input required p3" name="surname" type="text" />
+                                            <div class="input-style__line">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <div class="input-style input-style_small-label input-style_black">
+                                            <p class="input-style__label p4">Контактный телефон*
+                                            </p><input class="input-style__input userphone required p3" name="phone" type="text" />
+                                            <div class="input-style__line">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <div class="input-style input-style_small-label input-style_black">
+                                            <p class="input-style__label p4">E-mail*
+                                            </p><input class="input-style__input required usermail p3" name="email" type="text" />
+                                            <div class="input-style__line">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <div class="input-style input-style_small-label input-style_black">
+                                            <p class="input-style__label p4">Пароль*
+                                            </p><input class="input-style__input required password p3" name="password" type="text" />
+                                            <div class="input-style__line">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <div class="input-style input-style_small-label input-style_black">
+                                            <p class="input-style__label p4">Повторите пароль*
+                                            </p><input class="input-style__input required passwordConfirm p3" name="passwordRepeat" type="text" />
+                                            <div class="input-style__line">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <div class="checkbox-style checkbox-style_bordered"><input class="checkbox-style__input" type="checkbox" name="subscribe" value="Y" /><span class="checkbox-style__indicator"></span>
+                                            <p class="checkbox-style__label p4">Получать рассылку от SHOPRUKZAK
+                                            </p>
+                                        </div>
+                                        <div class="checkbox-style checkbox-style_bordered"><input class="checkbox-style__input required" type="checkbox" name="privicy" value="Y" /><span class="checkbox-style__indicator"></span>
+                                            <p class="checkbox-style__label p4">Согласие с политикой конфиденциальности
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="popup-form__item">
+                                        <button class="btn-style"><span class="btn-style__wrapper"><span class="btn-style__text">ЗАРЕГИСТРИРОВАТЬСЯ</span></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-style popup-style_small js-popup js-popup-request-thx js-popup-type-thx">
+        <div class="popup-style__content">
+            <div class="cross-btn js-close-popup">
+            </div>
+            <div class="popup-style__content-wrapper">
+                <h2 class="popup-style__title">Ваша заявка отправлена!
+                </h2>
+                <p class="popup-style__subtitle p1">В ближайшее время с вами свяжется менеджер.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-style popup-style_small js-popup js-popup-message-thx js-popup-type-thx">
+        <div class="popup-style__content">
+            <div class="cross-btn js-close-popup">
+            </div>
+            <div class="popup-style__content-wrapper">
+                <h2 class="popup-style__title">ваше сообщение отправлено!
+                </h2>
+                <p class="popup-style__subtitle p1">В ближайшее время с вами свяжется менеджер.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="popup-style popup-style_add-to-cart js-popup js-popup-add-to-cart">
+        <div class="popup-style__content">
+            <div class="cross-btn js-close-popup">
+            </div>
+            <div class="popup-style__content-wrapper js-added-to-cart-inner">
+            </div>
+        </div>
+    </div>
+    <div class="popup-style popup-style_quick-view js-popup js-popup-quick-view">
+        <div class="popup-style__content">
+            <div class="cross-btn js-close-popup">
+            </div>
+            <div class="popup-style__content-wrapper js-prod-popup">
+            </div>
+        </div>
+    </div>
+    <div class="loader-wrap js-loader">
+        <div class="loader"><span></span><span></span><span></span>
+        </div>
+    </div>
+    <script src="js/bundle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
++b('section').purchase-returns
+    +e.content
+        +e.H2.title Заявка на возврат товара
+        +b('form').form-style.js-form-adjuster.js-form-request(action="form-handler.php")
+            +e.row
+                +e.item._1of2
+                    +input({name:"name",label:"Имя*",mod:"required"})
+                +e.item._1of2
+                    +input({name:"surname",label:"Фамилия*",mod:"required"})
+
+            +e.row
+                +e.item._1of2
+                    +input({name:"email",label:"E-mail*",mod:"required usermail"})
+                +e.item._1of2
+                    +input({name:"phone",label:"Контактный телефон*",mod:"required userphone"})
+
+            +e.row
+                +e.item
+                    +input({name:"comment",label:"Сообщение*",mod:"required",tag:"textarea",mod:"_medium required"})
+
+            +e.H3.title Информация о товаре
+
+            +e.row
+                +e.item
+                    +input({name:"nameOfProduct",label:"Наименование товара*",mod:"required"})
+
+            +e.row
+                +e.item._1of2
+                    +input({name:"model",label:"Модель*",mod:"required"})
+                +e.item._1of2
+                    +input({name:"quantity",label:"Количество",mod:"required js-number-only"})
+
+            +e.group
+                +e.P.group-title.p4 Причина возврата*
+                -
+                    reasons = ["Ошибка (пожалуйста укажите/приложите подробности)","Получен не тот (ошибочный) товар","Получен/доставлен неисправным (сломан)","Другая причина (пожалуйста укажите/приложите подробности)"]
+                +e.group-list
+                    each item in reasons
+                        +e.group-item
+                            +radio({name:"reasonsForReturn",label:item,value:label,mod:"required"})
+
+            +e.group
+                +e.P.group-title.p4 Товар распакован?*
+                -
+                    reasons = ["Да","Нет"]
+                +e.group-list
+                    each item in reasons
+                        +e.group-item
+                            +radio({name:"unpacked",label:item,value:label,mod:"required"})
+
+            +e.row
+                +e.item
+                    +input({name:"defectDescription",label:"Описание дефектов*",mod:"_medium required",tag:"textarea"})
+
+            +e.btn-wrapper
+                +btn({title:"отправить запрос",button:true})

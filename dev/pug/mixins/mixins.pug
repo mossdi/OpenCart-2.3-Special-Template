@@ -1,0 +1,155 @@
+mixin btn(obj)
+    if obj.button
+        +b('button').btn-style(class="" + (obj.mod ? obj.mod : ""))
+            +e.SPAN.wrapper
+                +btn-text(obj)
+
+    else
+        if obj.href
+            +b.btn-style(class="" + (obj.mod ? obj.mod : ""),data-popup=(obj.data ? JSON.stringify(obj.data) : undefined),href=obj.href,title=obj.title,data-anchor=obj.anchor)
+                +e.SPAN.wrapper
+                    +btn-text(obj)
+
+        else
+            +b.btn-style(class="" + (obj.mod ? obj.mod : ""),data-popup=(obj.data ? JSON.stringify(obj.data) : undefined),data-anchor=obj.anchor)
+                +e.SPAN.wrapper
+                    +btn-text(obj)
+                    
+mixin btn-text(obj)
+    if (obj.search)
+        +e.SPAN.icon-search
+
+    else
+        +e.SPAN.text(class=obj.textMod)!=obj.title
+
+
+mixin object_fit(obj)
+    -
+        let {lazy,slick,src,mod} = obj,
+            img_mod = lazy && !slick ? "js-lazy-load" : "",
+            img_src = lazy ? false : src,
+            original = lazy ? src : undefined,
+            slick_src = lazy && slick ? src : undefined
+
+    +b.object-fit-wrap(class="" + (mod ? mod : ""))
+            +e.img-wrapper
+                +e.IMG.img(class=img_mod,src=img_src,data-url=original,alt="",data-lazy=slick_src,data-mob-url=original)
+
+
+mixin breadcrumbs(data)
+    +b.breadcrumbs               
+        if data.path
+            each item,index in data.path
+                +e.item
+                    if (index < data.path.length-1)
+                        +e.link.p3b(href=item.link)= item.text
+                    else    
+                        +e.SPAN.current.p3= item.text
+
+mixin merch_preview(obj)
+    +b.merch-preview
+        +e.content
+            +b.merch-gallery.js-merch-gallery
+                +e.preview.js-slider-merch-preview
+                    each item in obj.gallery
+                        +e.preview-item
+                            +object_fit({src:`media/product/${item.preview}.jpg`,mod:"_contain",lazy:true,slick:true})
+                +e.body.js-slider-merch-body
+                    each item,index in obj.gallery
+                        +e.body-item
+                            +e.product-link(href=item.href ? item.href : "#",title="Страница товара")
+                            if item.labels
+                                +b.merch-labels
+                                    each label in item.labels
+                                        +e.item(class=label.mod + " p4b")=label.title
+                            +e.img-block
+                                +e.img-wrapper
+                                    +object_fit({src:`media/product/${item.img}.jpg`,mod:"_contain",lazy:true,slick:true})
+                                    +e.btn-wrapper.js-call-popup(data-popup=JSON.stringify({target:"quick-view",id:item.id,category:obj.category,action:'quick-view.php'}))
+                                        +btn({title:"быстрый просмотр",mod:"_small"})
+                            +e.content
+                                +e.H5.name=item.name
+                                if item.desc
+                                    +e.P.description.p4=item.desc
+                                +e.price-block
+                                    +e.price-item.p2(data-currency="p.")=item.price
+
+                                    if item.old_price
+                                        +e.price-item._old.p2(data-currency="p.")=item.old_price
+
+mixin merch_preview_small(obj)
+    +b.merch-preview-small(href=obj.href,title="Страница товара")
+        +e.col._img
+            +object_fit({src:`media/product/${obj.img}.jpg`,mod:"_contain"})
+        +e.col._content
+            +e.P.name.p6=obj.name
+            +e.P.description.p7=obj.desc
+            +e.P.params.p7(data-text="Цвет")=obj.color
+        +e.col._price
+            +e.P.price.p8(data-currency="руб.")=obj.price
+
+mixin input(obj)
+    +b.input-style(class=obj.mod_wrap ? obj.mod_wrap : "")
+        if obj.label
+            +e.P.label(class=obj.label_small ? "p5" : "p4")=obj.label
+        +e(`${obj.tag ? obj.tag : "input"}`).input(name=obj.name,type=obj.type ? obj.type : "text",class=obj.mod ? obj.mod : "",placeholder=obj.placeholder).p3
+        +e.line
+
+mixin radio(obj)
+    +b.radio-style(class=(obj.mod_wrap ? obj.mod_wrap : "") + (obj.big ? " _big" : ""))
+        +e('input').input(type=obj.type ? obj.type : "radio",name=obj.name,value=obj.value,class=obj.mod ? obj.mod : "",checked=obj.checked)
+        +e.SPAN.indicator
+        +e.P.label(class=obj.big ? "p3": "p4")=obj.label
+
+mixin checkbox(obj)
+    +b.checkbox-style(class=obj.mod_wrap ? obj.mod_wrap : "")
+        +e('input').input(type=obj.type ? obj.type : "checkbox",name=obj.name,value=obj.value,class=obj.mod ? obj.mod : "",checked=obj.checked,form=obj.form)
+        +e.SPAN.indicator
+        +e.P.label.p4!=obj.label
+
+mixin btn_show_more
+    +b('span').show-more.p5.js-show-more(data-show="Показать еще",data-cut="Свернуть")
+
+mixin checkbox_number(obj)
+    +b.checkbox-number
+        +e('input').input(type=obj.type ? obj.type : "radio",name=obj.name,value=obj.value,class=obj.mod ? obj.mod : "",checked=obj.checked)
+        +e.P.label.b2=obj.label
+
+mixin select(obj)
+    -
+        wrapMod = obj.wrapMod ? obj.wrapMod : ''
+        selectMod = obj.selectMod ? obj.selectMod : ''
+
+    +b.select-module(class=wrapMod).js-select-module.js-body-click-close
+        +e('select').select(name=obj.name, class=selectMod).pseudo-hidden.js-select-module-select
+            if (obj.label)
+                option(disabled selected value="")
+
+            each item in obj.options
+                option(value=item.value)=item.title
+        if obj.real_label
+            +e.SPAN.real-label=obj.real_label
+        +e.input-container.js-select-module-container
+            +e.SPAN.placeholder.js-select-module-placeholder.p3 !{obj.label}
+            +e.SPAN.text-block.js-select-module-text-block.p3
+            
+        +e.line
+
+        +e.dropdown
+            +e.scroll.js-select-module-scrollbar.js-select-module-options
+
+mixin pagination()
+    +b.pagination
+        +e.link._active.b2 1
+        +e.link.b2(href="#") 2
+        +e.link.b2(href="#") 3
+        +e.link._dots.b2 ...
+        +e.link.b2(href="#") 15
+        +e.arrow._next.b2(href="#") Далее
+
+mixin btn_icon(obj)
+    +b.btn-icon(class=obj.mod ? obj.mod : "",data-popup=obj.data_popup)
+        +e.wrapper
+            +e.P.text.p4=obj.title
+            if obj.icon
+                +e.I.icon(class=`icon-${obj.icon}`)

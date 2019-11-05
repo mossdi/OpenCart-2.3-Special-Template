@@ -1,0 +1,99 @@
+-
+    soc = [{
+        icon:"facebook-logo"
+    },{
+        icon:"vk"
+    },{
+        icon:"instagram"
+    },{
+        icon:"twitter"
+    }],
+    nav = [{
+        title:"Помощь",
+        links:[{
+            href:"shipping-and-payment.html",
+            title:"Доставка / Оплата"
+        },{
+            href:"typical.html",
+            title:"Оферта"
+        },{
+            href:"typical.html",
+            title:"Вовзврат товара"
+        },{
+            href:"brands.html",
+            title:"Бренды"
+        },{
+            href:"stock.html",
+            title:"Акции"
+        }]
+    },{
+        title:"О НАС",
+        links:[{
+            href:"about-company.html",
+            title:"О комании"
+        },{
+            href:"contacts.html",
+            title:"Контакты и Реквизиты"
+        }]
+    },{
+        title:"ЛИЧНЫЙ КАБИНЕТ",
+        links:[{
+            href:"#",
+            title:"Мои данные"
+        },{
+            href:"#",
+            title:"Мои заказы"
+        }]
+    }],
+    pay = ["visa-pay","mastercard","yandex-pay"]
++b('footer').footer
+    +e.row._top
+        .container._top._start
+            +e.col._2._logo
+                +b.logo-footer(href="/",title="Главная")
+                    +e.img(src="images/logo/logo-white.svg",alt="")
+            each item in nav
+                +e.col._2
+                    +b.footer-nav-item.js-footer-nav-item
+                        +e.H4.title.js-footer-nav-btn=item.title
+                        +e.list.js-footer-nav-list
+                            +e.wrapper
+                                each link in item.links
+                                    +e.item.p4(href=link.href,title=link.title)=link.title
+            +e.col._3
+                +b.payment-footer
+                    +e.H4.title СПОСОБЫ ОПЛАТЫ
+                    +e.list
+                        each item in pay
+                            +e.item
+                                +e.img(src=`images/logo/${item}.svg`,alt="")
+    +e.row._middle
+        .container
+            +e.contacts
+                +e.phone.h3(href="tel:+79775177482",title="") 8 (977) 517-74-82
+                +e.email.p4(href="mailto:e-commerce@shoprukzak.ru",title="") e-commerce@shoprukzak.ru
+
+            +b.join-us
+                +e.H3.title ПРИСОЕДИНЯЙТЕСЬ К НАМ
+                +b.social-list
+                    each item in soc
+                        +e.item(href="#",title="")
+                            +e.I.icon(class=`icon-${item.icon}`)
+
+            +b('form').subscribe.js-form-adjuster.js-form-subscribe(action="form-handler.php")
+                +e.H4.title ПОДПИСАТЬСЯ НА РАССЫЛКУ
+                +e.row
+                    +e.item._input
+                        +input({name:"email",placeholder:"Ваш e-mail",mod:"required usermail"})
+                    +e.item._btn
+                        +btn({title:"ПОДПИСАТЬСЯ",button:true,mod:"_black _medium"})
+    +e.row._bottom
+        .container
+            +e.P.copyright.p4 © 2019, SHOPRUKZAK - Все права защищены
+            +e.privacy.p4(href="pdf/confidentiality.pdf",title="Политика конфиденциальности",target="_blank") Политика конфиденциальности
+            +b.tutmee(href="http://tutmee.ru/", title="tutmee", target="_blank")
+                +e.text.p5 LTD TutMee Web
+                    br
+                    | development Agency
+                +e.svg
+                    include ../../images/logo/tutmee.svg

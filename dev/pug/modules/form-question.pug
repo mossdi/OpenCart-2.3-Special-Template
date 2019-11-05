@@ -1,0 +1,19 @@
++b('form').form-question.js-form-adjuster.js-form-message
+    +e.content
+        +e.content-inner
+            +e.H2.title Есть предложения или вопросы?
+            +e.P.subtitle.p2 Отправьте нам сообщение и мы рассмотрим все ваши предложения.
+            +e.row
+                +e.item._1of3
+                    +input({name:"name",label:"Имя*",mod:"required"})
+                +e.item._1of3
+                    +input({name:"phone",label:"Телефон*",mod:"required userphone"})
+                +e.item._1of3
+                    +input({name:"email",label:"E-mail*",mod:"required usermail"})
+            +e.row
+                +e.item
+                    +input({name:"comment",label:"Ваше сообщение*",mod:"required",tag:"textarea"})
+
+            +e.row._start._btn
+                +e.item
+                    +btn({title:"отправить",button:true})

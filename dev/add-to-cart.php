@@ -1,0 +1,6 @@
+<?php
+$content = <<<HTML
+<div class="added-to-cart-popup"> <h3 class="added-to-cart-popup__title">ТОВАР ДОБАВЛЕН В КОРЗИНУ </h3> <div class="added-to-cart-popup__row"> <div class="added-to-cart-popup__col added-to-cart-popup__col_img"> <div class="object-fit-wrap object-fit-wrap_contain"> <div class="object-fit-wrap__img-wrapper"><img class="object-fit-wrap__img js-object-fit lazy" src="media/product/ashwood.jpg" alt="" role="presentation"/> </div></div></div><div class="added-to-cart-popup__col added-to-cart-popup__col_content"> <h4 class="added-to-cart-popup__name">ASHWOOD </h4> <p class="added-to-cart-popup__description p4">Рюкзак Ashwood Leather 1663 Chestnut </p><p class="added-to-cart-popup__params p4" data-title="Цвет:">Чёрный </p></div></div><div class="added-to-cart-popup__row-btn"> <div class="added-to-cart-popup__btn-item"> <div class="btn-style btn-style_small btn-style_medium-gray js-close-popup"><span class="btn-style__wrapper"><span class="btn-style__text">продолжить покупки</span></span> </div></div><div class="added-to-cart-popup__btn-item"><a class="btn-style btn-style_small" href="cart.html" title="оформить заказ"><span class="btn-style__wrapper"><span class="btn-style__text">оформить заказ</span></span></a> </div></div></div>
+HTML;
+echo $content;
+?>

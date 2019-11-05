@@ -1,0 +1,130 @@
+- pay = ["visa-pay","mastercard","yandex-pay"]
++b('section').checkout-form
+    .title-block
+        +e.H1.title Оформление заказа
+    +b('form').checkout-form.js-form-adjuster
+        +b.info-block
+            +e.P.text.p2 Продолжите оформление заказа в форме ниже. Учетная запись будет создана автоматически.
+        +e.wrapper
+            +e.content
+                +e.H3.title Персональные данные
+                +e.row
+                    +e.item._1of2
+                        +input({name:"name",label:"Имя*",mod:"required",mod_wrap:"_black",label_small:true})
+                    +e.item._1of2
+                        +input({name:"surname",label:"Фамилия*",mod:"required",mod_wrap:"_black",label_small:true})
+                +e.row
+                    +e.item._1of2
+                        +input({name:"email",label:"E-mail*",mod:"required usermail",mod_wrap:"_black",label_small:true})
+                    +e.item._1of2
+                        +input({name:"phone",label:"Контактный телефон*",mod:"required userphone",mod_wrap:"_black",label_small:true})
+                +e.H3.title Адрес доставки
+                +e.row
+                    +e.item._1of2
+                        -
+                            select = {
+                                wrapMod:"_small-label _black",
+                                selectMod:"required",
+                                name:"country",
+                                options:[{
+                                    title:"Российская федерация",
+                                    value:"Российская федерация"
+                                },{
+                                    title:"по популярности",
+                                    value:"по популярности"
+                                },{
+                                    title:"по популярности",
+                                    value:"по популярности"
+                                },{
+                                    title:"по популярности",
+                                    value:"по популярности"
+                                },{
+                                    title:"по популярности",
+                                    value:"по популярности"
+                                },{
+                                    title:"по популярности",
+                                    value:"по популярности"
+                                },{
+                                    title:"по популярности",
+                                    value:"по популярности"
+                                }],
+                                real_label:"Страна*"
+                            }
+                        +select(select)
+                    +e.item._1of2
+                        -
+                            select = {
+                                wrapMod:"_small-label _black",
+                                name:"region",
+                                selectMod:"required",
+                                options:[{
+                                    title:"по популярности",
+                                    value:"по популярности"
+                                },{
+                                    title:"по популярности",
+                                    value:"по популярности"
+                                },{
+                                    title:"по популярности",    
+                                    value:"по популярности"
+                                }],
+                                real_label:"Регион / Область*",
+                                label:"Выбрать регион"
+                            }
+                        +select(select)
+                +e.row
+                    +e.item._1of2
+                        +input({name:"city",label:"Город*",mod:"required",mod_wrap:"_black",label_small:true})
+                +e.H3.title Способ доставки
+                +e.row._vertical
+                    +e.item
+                        +radio({name:"delivery",label:"Курьер (Стоимость доcтавки 350 руб.)",mod_wrap:"_bordered",big:true,checked:true,value:"Курьер",mod:"js-radio-btn"})
+                    +e.item
+                        +radio({name:"delivery",label:"Самовывоз (Стоимость доставки расчитывается автоматически)",mod_wrap:"_bordered",big:true,value:"Самовывоз",mod:"js-radio-btn js-call-parameters"})
+                -
+                    pick = [{
+                        key:"Адрес:",
+                        value:"г. Москва, 1-й варшавский проезд, 2 стр. 9а"
+                    },{
+                        key:"Режим работы:",
+                        value:"ежедневно с 10:00 до 18:00"
+                    },{
+                        key:"Стоимость доставки:",
+                        value:"<span>650 руб.</span>"
+                    }]
+                +b.pickup-parameters.js-pickup-block
+                    +e.btn.p10(href="#",title="Изменить пункт самовывоза") Изменить пункт самовывоза
+                    +e.list
+                        each item in pick
+                            +e.list-item
+                                +e.P.title.p3=item.key
+                                +e.P.value.p3!=item.value
+    
+                +e.row
+                    +e.item._1of3
+                        +input({name:"street",label:"Улица*",mod:"required",mod_wrap:"_black",label_small:true})
+                    +e.item._1of5
+                        +input({name:"postcode",label:"Индекс",mod:"js-number-only",mod_wrap:"_black",label_small:true})
+                    +e.item._1of6._small
+                        +input({name:"house",label:"Дом*",mod:"required",mod_wrap:"_black",label_small:true})
+                    +e.item._1of6
+                        +input({name:"Housing",label:"Корпус*",mod:"required",mod_wrap:"_black",label_small:true})
+                    +e.item._1of6
+                        +input({name:"flat",label:"Квартира*",mod:"required",mod_wrap:"_black",label_small:true})
+    
+                +e.H3.title Способ оплаты
+    
+                +e.row
+                    +e.item
+                        +radio({name:"payment",label:"Безналичный расчет",mod_wrap:"_bordered",big:true,checked:true})
+                    +e.item
+                        +radio({name:"payment",label:"Наличными при получении",mod_wrap:"_bordered",big:true})
+                    +e.item
+                        +b.payment-footer
+                            +e.list
+                                each item in pay
+                                    +e.item
+                                        +e.img(src=`images/logo/${item}-black.svg`,alt="")
+        +e.btn-wrapper
+            +e.btn-item
+                +btn({title:"ПЕРЕЙТИ К ОПЛАТЕ",button:true})
+    

@@ -1,0 +1,77 @@
+.banner-small {
+    position: relative;
+    background: url("../images/bg/banner-about-small.jpg") no-repeat center;
+    background-size: cover;
+    margin-top: 100px;
+    padding: 104px 30px 109px;
+    &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+    }
+    &:first-child {
+        margin-top: 0;
+    }
+    &__content {
+        position: relative;
+        width: 100%;
+        max-width: 1020px;
+        margin: 0 auto;
+        text-align: center;
+        color: $white;
+    }
+    &__text {
+        margin-top: 31px;
+    }
+    .btn-style {
+        margin-top: 32px;
+    }
+    @include media_1500 {
+        margin-top: 90px;
+        padding: 69px 30px 75px;
+        &__content {
+            max-width: 880px;
+        }
+        &__text {
+            margin-top: 25px;
+        }
+        .btn-style {
+            margin-top: 22px;
+        }
+    }
+    @include media_1200 {
+        margin-top: 81px;
+        padding: 65px 30px 72px;
+        &__content {
+            max-width: 660px;
+        }
+    }
+    @include media_900 {
+        padding: 56px 30px 59px;
+
+        &__text {
+            margin-top: 16px;
+        }
+    }
+    @include media_550 {
+        margin-top: 61px;
+        padding: 39px 28px 38px;
+
+        &__content {
+            text-align: left;
+        }
+        &__text {
+            margin-top: 11px;
+        }
+        .btn-style {
+            width: 100%;
+            max-width: 224px;
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+-
+    brands = ["brialdi","lakestone","labbra","franchesco-mariscotti","david-jones","brialdi","labbra","franchesco-mariscotti","david-jones","brialdi"]
+
+    alphabet = [
+        {
+            letter: 'A',
+            list: [
+                'A-A by Ksenia Avakyan',
+                'Aarhon',
+                'Aasha Herbals',
+                'Absolutex',
+                'Abtoys',
+                'Acasta'
+            ]
+        },
+        {
+            letter: 'B',
+            list: [
+                'Babaluno',
+                'Babyline',
+                'Baby Steen',
+                'Bacio Bella'
+            ]
+        },
+        {
+            letter: 'C',
+            list: [
+                'C1rca',
+                'Cabaneli',
+                'Cacharel',
+                'Calipso',
+                'Call It Spring'
+            ]
+        },
+        {
+            letter: 'E',
+            list: [
+                'Eastpak',
+                'Ebulobo',
+                'Ecapsule'
+            ]
+        }
+    ]
++b('section').brands-all
+    .title-block
+        h1 бренды
+
+    +b.popular-brands
+        +e.list
+            each item in brands
+                +e.item(href='brand-page.html',title="")
+                    +e.img-wrap
+                        +e.img(src="media/brands/"+item+".png")
+
+    +b.alphabet-brands
+        each item in alphabet
+            +e.row(data-letter=item.letter)
+                -for (var i = 0; i < 3; i++)
+                    each link in item.list
+                        +e.link(href='catalog.html').p3 !{link}

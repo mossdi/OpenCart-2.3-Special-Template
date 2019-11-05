@@ -1,0 +1,68 @@
++b.catalog-row
+    if !full
+        +e.btn-wrapper._filter
+            +btn_icon({title:"Фильтр",icon:"filter",mod:"js-call-popup",data_popup:{target:"filter"}})
+    +e.btn-wrapper
+        +btn_icon({title:"Сортировка",icon:"sorting",mod:"js-call-popup",data_popup:{target:"sort"}})
+    +b.catalog-parameters._sort.js-popup-sort.js-popup
+        .cross-btn.js-close-popup
+        +e.wrapper
+            +e.item
+                +b.catalog-show
+                    +e.P.title.p4 Показать:
+                    -
+                        params = [30,50,100]
+                    +e.list
+                        each item,index in params
+                            +e.list-item
+                                +checkbox_number({name:"showBy",value:item,label:item,checked:!index ? true : false}) 
+    
+        +e.wrapper
+            +e.item
+                +checkbox({name:"onlyInStock",value:"Только в наличии",label:"Только в наличии",form:"filter-form",mod_wrap:"_right _dark"})
+            +e.item
+                -
+                    select = {
+                        wrapMod:"_small-container _filled",
+                        name:"sort",
+                        options:[{
+                            title:"по популярности",
+                            value:"по популярности"
+                        },{
+                            title:"по популярности",
+                            value:"по популярности"
+                        },{
+                            title:"по популярности",
+                            value:"по популярности"
+                        },{
+                            title:"по популярности",
+                            value:"по популярности"
+                        },{
+                            title:"по популярности",
+                            value:"по популярности"
+                        },{
+                            title:"по популярности",
+                            value:"по популярности"
+                        },{
+                            title:"по популярности",
+                            value:"по популярности"
+                        }]
+                    }
+                +e.select-wrapper
+                    +select(select)
+
+include catalog-list
+
++b.catalog-row._bottom
+    +b.catalog-parameters._bottom
+        +e.wrapper
+            +b.catalog-show
+                +e.P.title.p4 Показать:
+                -
+                    params = [30,50,100]
+                +e.list
+                    each item,index in params
+                        +e.list-item
+                            +checkbox_number({name:"showBySecond",value:item,label:item,checked:!index ? true : false})
+        +e.wrapper
+            +pagination

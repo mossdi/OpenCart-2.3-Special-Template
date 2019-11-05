@@ -1,0 +1,143 @@
+-
+    shipping_methods = [
+        {
+            icon: 'images/shipping-and-payment/delivery.svg',
+            title: 'Курьерская доставка',
+            text: [
+                'Стоимость и срок доставки рассчитываются автоматически при оформлении заказа, в зависимости от указанного Вами адреса.',
+                'За дополнительную плату возможна срочная доставка (об этом необходимо написать в комментарии при оформлении заказа).'
+            ]
+        },
+        {
+            icon: 'images/shipping-and-payment/point_of_issue_orders.svg',
+            title: 'Пункты выдачи заказов',
+            text: [
+                'Стоимость и срок доставки рассчитываются автоматически при оформлении заказа, в зависимости от указанного Вами адреса.',
+                'За дополнительную плату возможна срочная доставка (об этом необходимо написать в комментарии при оформлении заказа).'
+            ],
+            link: 'Показать все пункты выдачи заказов'
+        },
+        {
+            icon: 'images/shipping-and-payment/post_office.svg',
+            title: 'Почта',
+            text: [
+                'Стоимость и срок доставки рассчитываются автоматически при оформлении заказа, в зависимости от указанного Вами адреса.',
+                'За дополнительную плату возможна срочная доставка (об этом необходимо написать в комментарии при оформлении заказа).'
+            ]
+        },
+        {
+            icon: 'images/shipping-and-payment/postamat.svg',
+            title: 'Постаматы',
+            text: [
+                'Стоимость и срок доставки рассчитываются автоматически при оформлении заказа, в зависимости от указанного Вами адреса.',
+                'За дополнительную плату возможна срочная доставка (об этом необходимо написать в комментарии при оформлении заказа).'
+            ]
+        }
+    ]
+
+    payment_methods = [
+        {
+            icon: 'images/shipping-and-payment/dollar.svg',
+            title: 'Наличными',
+            text: 'при получении заказа'
+        },
+        {
+            icon: 'images/shipping-and-payment/payment.svg',
+            title: 'Банковской картой',
+            text: 'при получении или оформлении заказа'
+        },
+        {
+            icon: 'images/shipping-and-payment/contract.svg',
+            title: 'Безналичный расчет',
+            text: 'платежное поручение оформляется при заказе'
+        }
+    ]
+
+    shipping_price_popup = [
+        {
+            title: 'Курьерская доставка',
+            mod: 'js-shipping-delivery'
+        },
+        {
+            title: 'Пункты выдачи заказа',
+            mod: 'js-shipping-points'
+        },
+        {
+            title: 'Почта',
+            mod: 'js-shipping-post'
+        },
+        {
+            title: 'Постамат',
+            mod: 'js-shipping-postamat'
+        }
+    ]
+
++b('section').shipping-and-payment
+    .title-block
+        h1 ДОСТАВКА И ОПЛАТА
+
+    +b.shipping-methods
+        each item in shipping_methods
+            +e.item
+                +e.icon-wrap
+                    +e.icon(src=item.icon)
+
+                +e.description
+                    +e.H4.title !{item.title}
+
+                    each p in item.text
+                        p.p4 !{p}
+
+                    if (item.link)
+                        +e.link.p10(href='#') !{item.link}
+
+    +b.shipping-price.js-shipping-price-block
+        +e.col._left
+            +e('img').img.js-lazy-load(data-url='images/shipping_and_payment.jpg')
+
+        +e.col._right
+            +e.H4.title Узнать сроки и стоимость доставки в ваш город:
+
+            +e.FORM.form.js-form-adjuster.js-custom-ajax.js-shipping-price-form(action='shipping-price.php')
+                +input({name:"city",label:"Введите ваш город*",mod:"required",mod_wrap:"_black",label_small:true})
+                +btn({title:"РАССЧИТАТЬ",button:true})
+
+        +b.loader-wrap.js-shipping-price-loader
+            .loader
+                - for (var i = 0; i < 3; i++)
+                    span
+
+        +b.shipping-price-popup.js-shipping-price-popup
+            +e.wrapper
+                .cross-btn.js-shipping-price-popup-close
+                +e.H3.title.js-shipping-price-popup-title
+                +e.close.p10.js-shipping-price-popup-close Изменить город
+                +e.list
+                    each item in shipping_price_popup
+                        +e.item
+                            +e.H5.subtitle !{item.title}
+                            +e.SPAN.text.p3(class=item.mod)
+
+
+    +b.payment-methods
+        .title-wrap
+            h2 Способы оплаты
+
+        +e.list
+            each item in payment_methods
+                +e.item
+                    +e.icon-wrap
+                        +e.icon(src=item.icon)
+
+                    +e.description
+                        +e.H3.title !{item.title}
+                        p.p3 !{item.text}
+
+    +b.about-ordering
+        .title-wrap
+            h2 Оформление заказа
+
+        +e.container
+            .text-block._light
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget odio.

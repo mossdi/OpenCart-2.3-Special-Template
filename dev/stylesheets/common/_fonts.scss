@@ -1,0 +1,160 @@
+@font-face {
+    font-family: $bebas;
+    src: local("Bebas Neue Thin"), local("BebasNeue-Thin"),
+        url("../fonts/bebasneuethin.woff2") format("woff2"),
+        url("../fonts/bebasneuethin.woff") format("woff"),
+        url("../fonts/bebasneuethin.ttf") format("truetype");
+    font-weight: 100;
+    font-display: block;
+    font-style: normal;
+}
+@font-face {
+    font-family: $bebas;
+    src: local("Bebas Neue Light"), local("BebasNeue-Light"),
+        url("../fonts/bebasneuelight.woff2") format("woff2"),
+        url("../fonts/bebasneuelight.woff") format("woff"),
+        url("../fonts/bebasneuelight.ttf") format("truetype");
+    font-weight: 300;
+    font-display: block;
+    font-style: normal;
+}
+@font-face {
+    font-family: $bebas;
+    src: local("Bebas Neue Book"), local("BebasNeueBook"),
+        url("../fonts/bebasneuebook.woff2") format("woff2"),
+        url("../fonts/bebasneuebook.woff") format("woff"),
+        url("../fonts/bebasneuebook.ttf") format("truetype");
+    font-weight: 350;
+    font-display: block;
+    font-style: normal;
+}
+@font-face {
+    font-family: $bebas;
+    src: local("Bebas Neue Regular"), local("BebasNeueRegular"),
+        url("../fonts/bebasneueregular.woff2") format("woff2"),
+        url("../fonts/bebasneueregular.woff") format("woff"),
+        url("../fonts/bebasneueregular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: block;
+    font-style: normal;
+}
+@font-face {
+    font-family: $bebas;
+    src: local("Bebas Neue Bold"), local("BebasNeueBold"),
+        url("../fonts/bebasneuebold.woff2") format("woff2"),
+        url("../fonts/bebasneuebold.woff") format("woff"),
+        url("../fonts/bebasneuebold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: block;
+    font-style: normal;
+}
+@font-face {
+    font-family: $montserrat;
+    src: url("../fonts/montserrat-regular-webfont.woff2") format("woff2"),
+        url("../fonts/montserrat-regular-webfont.woff") format("woff");
+    font-weight: 400;
+    font-display: block;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $montserrat;
+    src: url("../fonts/montserrat-bold-webfont.woff2") format("woff2"),
+        url("../fonts/montserrat-bold-webfont.woff") format("woff");
+    font-weight: 700;
+    font-display: block;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $montserrat;
+    src: url("../fonts/montserrat-light-webfont.woff2") format("woff2"),
+        url("../fonts/montserrat-light-webfont.woff") format("woff");
+    font-weight: 300;
+    font-display: block;
+    font-style: normal;
+}
+@font-face {
+    font-family: $montserrat;
+    src: url("../fonts/montserrat-medium-webfont.woff2") format("woff2"),
+        url("../fonts/montserrat-medium-webfont.woff") format("woff");
+    font-weight: 500;
+    font-display: block;
+    font-style: normal;
+}
+@font-face {
+    font-family: $ico-font;
+    src: url("../fonts/icomoon.eot?is7u4c");
+    src: url("../fonts/icomoon.eot?is7u4c#iefix") format("embedded-opentype"),
+        url("../fonts/icomoon.ttf?is7u4c") format("truetype"),
+        url("../fonts/icomoon.woff?is7u4c") format("woff"),
+        url("../fonts/icomoon.svg?is7u4c#icomoon") format("svg");
+    font-display: block;
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: $ico-font;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before {
+    content: "\e900";
+}
+.icon-search:before {
+    content: "\e901";
+}
+.icon-facebook-logo:before {
+    content: "\e902";
+}
+.icon-vk:before {
+    content: "\e903";
+}
+.icon-login:before {
+    content: "\e904";
+}
+.icon-instagram:before {
+    content: "\e905";
+}
+.icon-basket:before {
+    content: "\e906";
+}
+.icon-selected:before {
+    content: "\e907";
+}
+.icon-mail:before {
+    content: "\e908";
+}
+.icon-telephone:before {
+    content: "\e909";
+}
+.icon-info:before {
+    content: "\e90a";
+}
+.icon-down-arrow:before {
+    content: "\e90b";
+}
+.icon-delete:before {
+    content: "\e90c";
+}
+.icon-sorting:before {
+    content: "\e90d";
+}
+.icon-plane:before {
+    content: "\e90e";
+}
+.icon-filter:before {
+    content: "\e90f";
+}

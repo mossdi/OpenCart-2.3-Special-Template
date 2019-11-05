@@ -1,0 +1,51 @@
++b('form').filter#form-filter(action="",type="")
+    .cross-btn.js-close-popup
+    +e.content
+        +e.item
+            +e.H4.title пол
+            -
+                gender = ["Женщины","Мужчины"]
+            
+            // data-max - this is the maximum number of items shown until the button(show-more) appears (default in js = 5).
+            +e.check-list.js-more-block
+                each item in gender
+                    +e.check-item.js-more-item
+                        +checkbox({name:"gender",value:item,label:item})
+                +btn_show_more
+    
+        +e.item
+            +e.H4.title МАТЕРИАЛ
+            -
+                material = ["Натуральная кожа","Искусственная кожа","Канвас","Кордура","Полиэстр"]
+    
+            +e.check-list.js-more-block
+                each item in material
+                    +e.check-item.js-more-item
+                        +checkbox({name:"material",value:item,label:item})
+                +btn_show_more
+    
+        +e.item
+            +e.H4.title ЦВЕТ
+            -
+                color = ["Бежевый","Бежевый перламутр","Белое золото","Белый","Белый","Бежевый","Бежевый перламутр","Белое золото","Белый","Белый"]
+                
+            +e.check-list.js-more-block
+                each item in color
+                    +e.check-item.js-more-item
+                        +checkbox({name:"material",value:item,label:item})
+                +btn_show_more
+    
+        +e.item
+            +e.H4.title ЦЕНА
+            +b.range-block.js-range-module
+                +e('input').input.js-range-input(name="price",type="text",data-type="double",data-min="1200",data-max="15000",data-from="1200",data-to="15000",data-hide-from-to="true",data-postfix=" руб.")
+                +e.input-row
+                    +input({name:"priceFrom",mod:"_range js-number-only js-range-price-from js-range-input-number"})
+                    +e.SPAN.separator
+                    +input({name:"priceTo",mod:"_range js-number-only js-range-price-to js-range-input-number"})
+    
+        +e.item._controls
+            +e.btn-wrapper
+                +btn({title:"Применить",button:true,mod:"_small"})
+            +e.btn-wrapper
+                +btn({title:"Сбросить",mod:"_transparent _small js-form-reset"})

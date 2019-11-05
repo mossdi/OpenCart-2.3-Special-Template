@@ -1,0 +1,84 @@
+extends ../layout
+block content
+    -
+        pages = [{
+            title:"Главная",
+            href:"index"
+        },{
+            title:"О компании",
+            href:"about-company"
+        },{
+            title:"Контакты",
+            href:"contacts"
+        },{
+            title:"Типовая страница",
+            href:"typical"
+        },{
+            title:"Акции",
+            href:"stock"
+        },{
+            title:"Результаты поиска",
+            href:"search-result"
+        },{
+            title:"Каталог",
+            href:"catalog"
+        },{
+            title:"Страница одного бренда",
+            href:"brand-page"
+        },{
+            title:"Карточка товара",
+            href:"product-card"
+        },{
+            title:"Корзина",
+            href:"cart"
+        },{
+            title:"Оформление заказа",
+            href:"checkout"
+        },{
+            title:"Бренды",
+            href:"brands"
+        },{
+            title:"Доставка и оплата",
+            href:"shipping-and-payment"
+        },{
+            title:"Забыли пароль",
+            href:"reset-password"
+        },{
+            title:"Успешное созднание нового пароля",
+            href:"reset-password-success"
+        },{
+            title:"404",
+            href:"404"
+        },{
+            title:"Корзина попап, при наведении на иконку в хедере(оба состояния)",
+            href:"index"
+        },{
+            title:"Поиск попап, клик по иконке в хедере",
+            href:"index"
+        },{
+            title:"Подписаться на рассылку попап",
+            href:"popup-subscribe"
+        },{
+            title:"Спасибо за подписку попап, подписаться",
+            href:"popup-subscribe-thx"
+        },{
+            title:"Вход/Регистрация попап",
+            href:"popup-signin-login"
+        },{
+            title:"Быстрый просмотр товара попап - любая карточка товара",
+            href:"index"
+        },{
+            title:"Спасибо за сообщение попап",
+            href:"popup-message-thx"
+        },{
+            title:"Спасибо за заявку попап",
+            href:"popup-request-thx"
+        },{
+            title:"Товар добавлен в корзину попап - добавить товар в корзину",
+            href:"product-card"
+        }]
+
+    ol
+        each item,index in pages
+            li
+                a.p1(href=`${item.href}.html`,title=item.title,target="_blank")=`${index + 1}. ${item.title}`

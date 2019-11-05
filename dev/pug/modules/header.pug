@@ -1,0 +1,202 @@
+
+-
+    nav = [{
+        title:"Каталог",
+        links:[{
+            href:"catalog.html",
+            title:"Рюкзаки"
+        },{
+            href:"catalog.html",
+            title:"Сумки"
+        },{
+            href:"catalog.html",
+            title:"Портфели"
+        },{
+            href:"catalog.html",
+            title:"Папки для документов"
+        },{
+            href:"catalog.html",
+            title:"Барсетки"
+        },{
+            href:"catalog.html",
+            title:"Клатчи"
+        },{
+            href:"catalog.html",
+            title:"Ремни"
+        },{
+            href:"catalog.html",
+            title:"Аксессуары"
+        },{
+            href:"catalog.html",
+            title:"Рюкзаки"
+        },{
+            href:"catalog.html",
+            title:"Сумки"
+        },{
+            href:"catalog.html",
+            title:"Портфели"
+        },{
+            href:"catalog.html",
+            title:"Папки для документов"
+        },{
+            href:"catalog.html",
+            title:"Барсетки"
+        },{
+            href:"catalog.html",
+            title:"Клатчи"
+        },{
+            href:"catalog.html",
+            title:"Ремни"
+        },{
+            href:"catalog.html",
+            title:"Аксессуары"
+        },{
+            href:"catalog.html",
+            title:"Рюкзаки"
+        },{
+            href:"catalog.html",
+            title:"Сумки"
+        },{
+            href:"catalog.html",
+            title:"Портфели"
+        },{
+            href:"catalog.html",
+            title:"Папки для документов"
+        },{
+            href:"catalog.html",
+            title:"Барсетки"
+        },{
+            href:"catalog.html",
+            title:"Клатчи"
+        },{
+            href:"catalog.html",
+            title:"Ремни"
+        },{
+            href:"catalog.html",
+            title:"Аксессуары"
+        },{
+            href:"catalog.html",
+            title:"Рюкзаки"
+        },{
+            href:"catalog.html",
+            title:"Сумки"
+        },{
+            href:"catalog.html",
+            title:"Портфели"
+        },{
+            href:"catalog.html",
+            title:"Папки для документов"
+        },{
+            href:"catalog.html",
+            title:"Барсетки"
+        },{
+            href:"catalog.html",
+            title:"Клатчи"
+        },{
+            href:"catalog.html",
+            title:"Ремни"
+        },{
+            href:"catalog.html",
+            title:"Аксессуары"
+        }]
+    },{
+        title:"Покупателю",
+        links:[{
+            href:"shipping-and-payment.html",
+            title:"Доставка / оплата"
+        },{
+            href:"typical.html",
+            title:"Оферта"
+        },{
+            href:"typical.html",
+            title:"Возврат товара"
+        },{
+            href:"brands.html",
+            title:"Бренды"
+        },{
+            href:"stock.html",
+            title:"Акции"
+        }]
+    },{
+        title:"О нас",
+        links:[{
+            href:"about-company.html",
+            title:"О компании"
+        },{
+            href:"contacts.html",
+            title:"Контакты и Реквизиты"
+        }]
+    }],
+    cart = [{
+        img:"ashwood",
+        name:"ASHWOOD",
+        desc:"Рюкзак Ashwood Leather 1663 Chestnut",
+        color:"Коричневый",
+        price:"15000",
+        href:"product-card.html"
+    }]
+
++b.HEADER.header.js-header
+    +e.overlay.js-overlay-header
+    +e.wrapper
+        .container
+            +b.logo(href="/",title="Главная")
+                img(src="images/logo.svg")
+            +b.hamburger.js-hamburger
+                +e.bar
+            +b.controls-header
+                +e.item
+                    +e.link.js-call-search(href="#",title="")
+                        +e.I.icon.icon-search
+                +e.item.js-touch-relative
+                    // _active if number of products in the cart more then 0
+                    +e.link._cart(class="  _active" href="cart.html",title="")
+                        +e.I.icon.icon-basket(data-count="1")
+                    +e.popup
+                        +e.popup-content
+                            //render header-cart-popup or header-cart-empty if cart is empty
+                            +b.header-cart-popup
+                                +e.list.js-custom-scroll
+                                    +b.header-cart-list
+                                        each item in cart
+                                            +e.item
+                                                +merch_preview_small(item)
+                                +e.bottom
+                                    +e.wrapper
+                                        +e.P.total-title.p7 Сумма заказа
+                                        +e.P.total.p9(data-currency="руб") 30000
+                                    +btn({title:"ПЕРЕЙТИ К ОФОРМЛЕНИЮ",href:"cart.html",mod:"_small"})
+                            +b.header-cart-empty
+                                +e.P.text.p5 Ваша корзина пуста
+                                +e.img(src="images/svg/cart-empty-icon.svg",alt="")
+    
+                    
+                +e.item
+                    // _active for logged in user
+                    // link work as link when element haven't class "_active"
+                    +e.link.js-call-popup.js-btn-relative-active(href="#",title="",data-popup='{"target":"auth"}')
+                        +e.I.icon.icon-login
+        +e.search-popup.js-search-popup
+            +b('form').header-search-form
+                +e.content
+                    +e.input-wrapper
+                        +e.I.icon.icon-search
+                        +e.INPUT.input.h4(type="text",name="search",placeholder="Что вы ищите?")
+                    +btn({title:"Найти",button:true,mod:"_transparent _big"})
+
+    +b.menu
+        .container
+            +e.wrapper
+                +b('nav').nav
+                    each item in nav
+                        +e.item
+                            +e.H3.title.js-menu-category=item.title
+                                +e.I.title-icon.icon-down-arrow
+                            +e.list
+                                +e.back.b1.js-menu-back
+                                    +e.I.back-icon.icon-down-arrow
+                                    | Назад
+
+                                each link in item.links
+                                    +e.list-item
+                                        +e.link(href=link.href,title=link.title)=link.title

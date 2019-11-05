@@ -1,0 +1,66 @@
+-
+    tabs = [{
+        title:"Войти",
+        anchor:"sign-in"
+    },{
+        title:"РЕГИСТРАЦИЯ",
+        anchor:"login"
+    },{
+        title:"ПРОДОЛЖИТЬ БЕЗ РЕГИСТРАЦИИ",
+        href:"checkout-form.html"
+    }]
+    
++b('section').checkout
+    .title-block
+        +e.H1.title Оформление заказа
+    +b.checkout-tab-module.js-checkout-tabs-module
+        +e.tabs
+            each item in tabs
+                +e.item
+                    if item.anchor
+                        +btn({title:item.title,anchor:item.anchor,mod:"_bordered _tab js-checkout-tab"})
+                    else
+                        +btn({title:item.title,href:item.href,mod:"_bordered _tab"})
+        +e.body
+            +e.body-item.js-checkout-tabs-body-item(data-anchor="sign-in")
+                +b('form').checkout-form.js-form-adjuster
+                    +e.wrapper
+                        +e.content
+                            +e.row
+                                +e.item._1of2
+                                    +input({name:"email",label:"E-mail*",mod:"usermail required",label_small:true,mod_wrap:"_black"})
+                                +e.item._1of2
+                                    +input({name:"password",type:"password",label:"Пароль*",mod:"required",label_small:true,mod_wrap:"_black"})
+                            +e.row
+                                +e.item
+                                    +checkbox({name:"remember",label:"Запомнить меня",value:"y",mod_wrap:"_bordered"})
+                    +e.btn-wrapper
+                        +e.btn-item
+                            +btn({title:"ВОЙТИ В ЛИЧНЫЙ КАБИНЕТ",button:true})
+                        +e.btn-item
+                            +btn({title:"Забыли пароль?",mod:"_transparent",href:"forgot-password.html"})
+            +e.body-item.js-checkout-tabs-body-item(data-anchor="login")
+                +b('form').checkout-form.js-form-adjuster
+                    +e.wrapper
+                        +e.content._full
+                            +e.row
+                                +e.item._1of3
+                                    +input({name:"name",label:"Имя*",mod:"required",mod_wrap:"_black",label_small:true})
+                                +e.item._1of3
+                                    +input({name:"surname",label:"Фамилия*",mod:"required",mod_wrap:"_black",label_small:true})
+                                +e.item._1of3
+                                    +input({name:"phone",label:"Контактный телефон*",mod:"required userphone",mod_wrap:"_black",label_small:true})
+                                +e.item._1of3
+                                    +input({name:"email",label:"E-mail*",mod:"required usermail",mod_wrap:"_black",label_small:true})
+                                +e.item._1of3
+                                    +input({name:"password",label:"Пароль*",type:"password",mod:"required password",mod_wrap:"_black",label_small:true})
+                                +e.item._1of3
+                                    +input({name:"passwordRepeat",label:"Повторите пароль*",type:"password",mod:"required passwordConfirm",mod_wrap:"_black",label_small:true})
+                            +e.row
+                                +e.item
+                                    +checkbox({name:"newsletter",label:"Получать рассылку от SHOPRUKZAK",value:"y",mod_wrap:"_bordered"})
+                                +e.item
+                                    +checkbox({name:"privacyPolicy",label:"Согласие с политикой конфиденциальности",value:"y",mod_wrap:"_bordered",mod:"required"})
+                    +e.btn-wrapper
+                         +e.btn-item
+                            +btn({title:"ЗАРЕГИСТРИРОВАТЬСЯ",button:true})

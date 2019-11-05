@@ -1,0 +1,229 @@
+.tabs-content {
+    display: block;
+    position: relative;
+    margin-top: 125px;
+
+    & + & {
+        margin-top: 142px;
+    }
+
+    &__nav {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 37px;
+
+        &:before {
+            content: "";
+            display: block;
+            @include absolute(auto);
+            width: 100%;
+            height: 1px;
+            background: $gray2;
+            z-index: 1;
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        margin: 0px 38px;
+        padding: 0 4px 18px;
+        cursor: pointer;
+        color: $gray5;
+        z-index: 2;
+        overflow: hidden;
+        text-align: center;
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            @include absolute(auto);
+            transition: $transition;
+        }
+
+        &:before {
+            width: 100%;
+            height: 3px;
+            background: $orange;
+            transform: scaleX(0);
+        }
+
+        &:after {
+            width: 8px;
+            height: 6px;
+            border-style: solid;
+            border-width: 0 4px 6px 4px;
+            border-color: transparent transparent $orange transparent;
+            bottom: 3px;
+            transform: translateY(10px);
+        }
+
+        &:hover,
+        &._active {
+            color: $black;
+        }
+
+        &._active {
+            &:before {
+                transform: scaleX(1);
+            }
+
+            &:after {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &__content {
+        display: block;
+        position: relative;
+    }
+
+    &__tab {
+        @include absolute(0, 0, auto);
+        z-index: 1;
+        opacity: 0;
+        pointer-events: none;
+        animation: hide-tab 0.3s ease both;
+
+        &._active {
+            position: relative;
+            z-index: 2;
+            opacity: 1;
+            pointer-events: auto;
+            animation: show-tab 1s ease both;
+            animation-delay: 0.3s;
+        }
+    }
+    .text-block {
+        width: 78.3%;
+        margin: 0 auto;
+    }
+    &_category & {
+        &__nav {
+            margin-bottom: 51px;
+        }
+        &__link {
+            margin: 0px 25px;
+        }
+    }
+    @include media_1500 {
+        margin-top: 89px;
+        & + & {
+            margin-top: 89px;
+        }
+        &__nav {
+            margin-bottom: 39px;
+        }
+        &__link {
+            margin: 0 35px;
+            padding: 0 8px 12px;
+        }
+        .text-block {
+            width: calc(100% / 12 * 10);
+        }
+        &_category & {
+            &__nav {
+                margin-bottom: 36px;
+            }
+            &__link {
+                margin: 0px 34px;
+            }
+        }
+    }
+    @include media_1200 {
+        margin-top: 78px;
+        & + & {
+            margin-top: 78px;
+        }
+        &__link {
+            padding-bottom: 13px;
+        }
+        .text-block {
+            width: 100%;
+        }
+    }
+    @include media_900 {
+        margin-top: 59px;
+        &__link {
+            margin: 0 25px;
+            padding: 0px 5px 12px;
+        }
+        &_category & {
+            &__nav {
+                margin-bottom: 27px;
+            }
+            &__link {
+                margin: 0px 18px;
+            }
+        }
+    }
+    @include media_550 {
+        margin-top: 64px;
+        & + & {
+            margin-top: 61px;
+        }
+        &__nav {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: stretch;
+            border-top: 1px solid $gray2;
+            padding-top: 20px;
+            margin-bottom: 21px;
+
+            &:before {
+                content: none;
+            }
+        }
+
+        &__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $gray4;
+            width: calc(50% - 3px);
+            margin: 0 0 6px;
+            padding: 6px 10px 7px;
+            &:before,
+            &:after {
+                content: none;
+            }
+            &._active {
+                border-color: $orange;
+            }
+        }
+        &_category & {
+            &__nav {
+                margin-bottom: 21px;
+            }
+            &__link {
+                width: 100%;
+                margin: 0 0 8px;
+            }
+        }
+    }
+}
+@keyframes show-tab {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes hide-tab {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

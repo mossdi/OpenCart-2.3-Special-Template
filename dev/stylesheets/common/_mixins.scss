@@ -1,0 +1,201 @@
+@mixin media_pre-mobile1000 {
+    @media only screen and (max-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin media_1750 {
+    @media all and (max-width: 1750px) {
+        @content;
+    }
+}
+@mixin media_min-1750 {
+    @media only screen and (min-width: 1751px) {
+        @content;
+    }
+}
+@mixin media_from-1750-to-1300 {
+    @media all and (max-width: 1750px) and (min-width: 1301px) {
+        @content;
+    }
+}
+
+@mixin media_1650 {
+    @media all and (max-width: 1650px) {
+        @content;
+    }
+}
+
+@mixin media_1600 {
+    @media all and (max-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin media_1500 {
+    @media all and (max-width: 1500px) {
+        @content;
+    }
+}
+
+@mixin media_1450 {
+    @media all and (max-width: 1450px) {
+        @content;
+    }
+}
+
+@mixin media_1300 {
+    @media all and (max-width: 1300px) {
+        @content;
+    }
+}
+@mixin media_1200 {
+    @media all and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin media_min-1300 {
+    @media all and (min-width: 1301px) {
+        @content;
+    }
+}
+
+@mixin media_from-1300-to-900 {
+    @media all and (max-width: 1300px) and (min-width: 901px) {
+        @content;
+    }
+}
+
+@mixin media_1200 {
+    @media all and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin media_1100 {
+    @media all and (max-width: 1100px) {
+        @content;
+    }
+}
+
+@mixin media_1000 {
+    @media all and (max-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin media_950 {
+    @media only screen and (max-width: 950px) {
+        @content;
+    }
+}
+
+@mixin media_900 {
+    @media only screen and (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin media_min-900 {
+    @media only screen and (min-width: 901px) {
+        @content;
+    }
+}
+
+@mixin media_750 {
+    @media only screen and (max-width: 750px) {
+        @content;
+    }
+}
+
+@mixin media_700 {
+    @media only screen and (max-width: 700px) {
+        @content;
+    }
+}
+
+@mixin media_min-700 {
+    @media only screen and (min-width: 701px) {
+        @content;
+    }
+}
+
+@mixin media_650 {
+    @media only screen and (max-width: 650px) {
+        @content;
+    }
+}
+
+@mixin media_600 {
+    @media only screen and (max-width: 600px) {
+        @content;
+    }
+}
+
+@mixin media_550 {
+    @media only screen and (max-width: 550px) {
+        @content;
+    }
+}
+
+@mixin media_500 {
+    @media only screen and (max-width: 500px) {
+        @content;
+    }
+}
+
+@mixin media_450 {
+    @media only screen and (max-width: 450px) {
+        @content;
+    }
+}
+
+@mixin show_on_600 {
+    @include media_min-600 {
+        display: none !important;
+    }
+}
+@mixin hide_on_600 {
+    @include media_600 {
+        display: none !important;
+    }
+}
+
+@mixin absolute($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    margin: auto;
+}
+
+@mixin fixed($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin slider-preload($root, $item-name: "item") {
+    &:not(.slick-initialized) {
+        opacity: 0;
+
+        #{$root}__#{$item-name}:not(:first-child) {
+            display: none;
+        }
+    }
+}
+@mixin object-fit($fit: fill, $position: null) {
+    -o-object-fit: $fit;
+    object-fit: $fit;
+    @if $position {
+        -o-object-position: $position;
+        object-position: $position;
+        font-family: "object-fit: #{$fit}; object-position: #{$position}";
+    } @else {
+        font-family: "object-fit: #{$fit}";
+    }
+}

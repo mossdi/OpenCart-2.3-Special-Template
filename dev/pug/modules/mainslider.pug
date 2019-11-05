@@ -1,0 +1,36 @@
+-
+    slider = [
+        {
+            "image":"images/slide1.jpg",
+            "title":"Новые поступления",
+            "subtitle":"Новая коллекция ВЕСНА 2019",
+            
+        },
+        {
+            "image":"images/slide1.jpg",
+            "title":"СНИЖЕНИЕ ЦЕН",
+            "subtitle":"Аксессуары для нее",
+            
+        },
+        {
+            "image":"images/slide1.jpg",
+            "title":"ЧЕРНАЯ ПЯТНИЦА В SHOPRUKZAK",
+            "subtitle":"Скидки до 90%",
+            
+        },
+        {
+            "image":"images/slide1.jpg",
+            "title":"ЧЕРНАЯ ПЯТНИЦА В SHOPRUKZAK",
+            "subtitle":"Скидки до 90%",
+            
+        }
+    ]
+
++b.mainslider.slick-theme.js-mainslider
+    each item in slider
+        +e.SECTION.slide
+            +e.image
+                +object_fit({src:item.image,lazy:true,slick:true})
+            +e.text-container
+                +e.H1.title= item.title
+                +e.H4.subtitle= item.subtitle

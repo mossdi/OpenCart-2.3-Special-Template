@@ -1,0 +1,42 @@
+.checkout-form {
+    .title-block {
+        padding-bottom: 20px;
+    }
+}
+.info-block {
+    padding: 13px 25px 36px;
+    text-align: center;
+    &__text {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 37px;
+        &:before {
+            content: "\e90a";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 22px;
+            font-family: $ico-font;
+            line-height: 1;
+        }
+    }
+    @include media_1500 {
+        padding: 5px 25px 28px;
+    }
+    @include media_1200 {
+        padding: 3px 37px 28px;
+    }
+    @include media_900 {
+        padding: 0px 37px 27px;
+    }
+    @include media_550 {
+        padding: 0px 25px 19px;
+        &__text {
+            padding-left: 0;
+            &:before {
+                content: none;
+            }
+        }
+    }
+}

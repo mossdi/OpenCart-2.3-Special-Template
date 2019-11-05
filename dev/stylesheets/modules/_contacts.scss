@@ -1,0 +1,209 @@
+.contacts {
+    &__title {
+        text-align: center;
+    }
+}
+
+.contact-list {
+    position: relative;
+    border: 2px solid $gray4;
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 61px;
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% / 3 - 40px / 3);
+        padding: 53px 0 69px;
+    }
+    &__separator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 2px;
+        &:after {
+            content: "";
+            background-color: $gray4;
+            display: block;
+            height: 62%;
+            width: 100%;
+        }
+    }
+    &__icon {
+        z-index: -1;
+        position: absolute;
+        left: 50%;
+        bottom: calc(100% - 20px);
+        transform: translateX(-50%);
+        font-size: 88px;
+        line-height: 1;
+        color: $gray4;
+    }
+    &__content {
+        text-align: left;
+        &_column {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .btn-style {
+        min-width: 245px;
+        margin: 10px auto;
+    }
+    &__title {
+        margin-bottom: 15px;
+    }
+    &__link {
+        display: inline-block;
+        vertical-align: top;
+        transition: 0.3s ease;
+        margin-top: 8px;
+        color: $black;
+        &:hover {
+            color: $orange;
+        }
+    }
+    &__label {
+        color: $gray2;
+    }
+    &__schedule {
+        margin-top: 5px;
+        max-width: 200px;
+    }
+    @include media_1500 {
+        margin-top: 39px;
+        &__item {
+            padding: 50px 0 54px;
+        }
+        &__icon {
+            bottom: calc(100% - 13px);
+            font-size: 59px;
+        }
+        &__schedule {
+            margin-top: 10px;
+        }
+        .btn-style {
+            margin: 7px auto;
+        }
+        &__separator {
+            &:after {
+                height: 69%;
+            }
+        }
+    }
+    @include media_1200 {
+        flex-direction: column;
+        margin-top: 0;
+        padding: 32px 39px;
+
+        &__item {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 25px 56px 29px 0;
+        }
+        &__icon {
+            z-index: inherit;
+            position: static;
+            transform: none;
+            font-size: 51px;
+        }
+        &__title {
+            margin-bottom: 10px;
+        }
+        &__schedule {
+            margin-top: 5px;
+            max-width: none;
+        }
+        &__separator {
+            display: block;
+            width: 100%;
+            height: 2px;
+            &:after {
+                width: 100%;
+            }
+        }
+        &__content {
+            &_column {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+            }
+        }
+        .btn-style {
+            min-width: 218px;
+            margin: 0 20px 0 0;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    @include media_900 {
+        padding: 11px 48px;
+        &__item {
+            padding: 25px 0 32px;
+        }
+        &__content {
+            max-width: calc(100% - 60px);
+        }
+        &__title {
+            margin-bottom: 15px;
+        }
+        &__schedule {
+            margin-top: 7px;
+        }
+        &__icon {
+            font-size: 40px;
+        }
+        .btn-style {
+            min-width: 202px;
+        }
+    }
+    @include media_700 {
+        .btn-style {
+            min-width: 0;
+        }
+    }
+    @include media_650 {
+        &__content {
+            &_column {
+                flex-direction: column;
+                justify-content: center;
+                align-items: stretch;
+            }
+        }
+        .btn-style {
+            margin: 7px 0;
+        }
+    }
+    @include media_550 {
+        border: none;
+        padding: 0;
+        &__item {
+            border-top: 2px solid $gray4;
+            padding: 23px 20px 27px;
+            &:last-child {
+                border-bottom: 2px solid $gray4;
+            }
+        }
+        &__content {
+            max-width: calc(100% - 50px);
+        }
+        &__icon {
+            font-size: 30px;
+        }
+        &__separator {
+            display: none;
+        }
+        &__schedule {
+            margin-top: 4px;
+        }
+    }
+}

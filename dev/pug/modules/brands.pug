@@ -1,0 +1,15 @@
+-
+    brands = ["brialdi","lakestone","labbra","franchesco-mariscotti","david-jones","brialdi","lakestone","labbra","franchesco-mariscotti","david-jones","brialdi","lakestone","labbra","franchesco-mariscotti","david-jones"]
+    
++b.brands
+    +e.H4.title БРЕНД
+    +e.list-wrapper
+        +b.color-picker._brands.js-body-click-close
+            +e.btn.js-color-picker-btn
+            +e.list
+                each item,index in brands
+                    -
+                        mod = index === 4 ? ' _active' : ''
+                    +e.item(href="#",class=mod,title=item)
+                        +e.img-wrap
+                            +e.img(src=`media/brands/${item}.png`)

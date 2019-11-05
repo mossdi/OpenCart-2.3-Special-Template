@@ -1,0 +1,10 @@
++b('form').write-to-us.js-form-adjuster.js-form-message(action="form-handler.php")
+    +e.H2.title Написать нам
+    +e.wrapper
+        +e.item
+            +input({name:"name",label:"Имя*",mod:"required"})
+        +e.item
+            +input({name:"email",label:"E-mail*",mod:"required usermail"})
+        +e.item
+            +input({name:"comment",label:"Ваше сообщение*",mod:"_big required",tag:"textarea"})
+        +btn({title:"отправить",button:true})

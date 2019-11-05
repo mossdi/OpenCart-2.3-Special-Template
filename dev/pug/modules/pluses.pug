@@ -1,0 +1,30 @@
+-
+    pluses = [{
+        title:"У нас модели на любой вкус",
+        content:"<p>Предпочитаете только лучшее? Наш интернет-магазин рюкзаков и стильных сумок может стать вашим надёжным помощником. В каталог попадают модели, которые отличаются не только эстетической привлекательностью, но и безупречным качеством.</p><ul><li>элегантные клатчи;</li><li>деловые портфели и папки для документов;</li><li>дорожные сумки;</li><li>спортивные рюкзаки;</li><li>и прочие аксессуары;</li></ul>"
+    },{
+        title:"Мы внимательно относимся  к каждому нашему клиенту",
+        content:"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque</p>"
+    },{
+        title:"Выгодные предложения для каждого",
+        content:"<p>В Москве немало магазинов, которые предлагают купить стильные аксессуары. Так почему же стоит оформлять заказ именно в интернет-магазине портфелей ShopRukzak? Таким вопросом не задаются наши покупатели. Мы не только гарантируем большой ассортимент моделей, но и стремимся предоставить наиболее выгодные условия для совершения заказов.</p>",
+        btn:{
+            title:"СМОТРЕТЬ ВСЕ АКЦИИ",
+            href:"stock.html",
+            mod:"_small"
+        }
+    }]
+
++b('section').pluses
+    +e.H2.title Почему именно наш магазин?
+    +b.pluses-list
+        each item,index in pluses
+            +e.item
+                +e.col._img
+                    +object_fit({src:`media/pluses/plus${index + 1}.jpg`,lazy:true})
+                +e.col._content
+                    +e.content
+                        +e.H4.title=item.title
+                        +e.text-block!=item.content
+                        if item.btn
+                            +btn(item.btn)

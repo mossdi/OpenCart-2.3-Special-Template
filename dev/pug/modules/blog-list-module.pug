@@ -1,0 +1,39 @@
+-
+    posts = [{
+        href:"typical.html",
+        date:"21 июня 2019",
+        title:"Заголовок новости в одну или две строки",
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet"
+    },{
+        href:"typical.html",
+        date:"21 июня 2019",
+        title:"Заголовок новости в одну или две строки",
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet"
+    },{
+        href:"typical.html",
+        date:"21 июня 2019",
+        title:"Заголовок новости в одну или две строки",
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet consectetur adipiscing elit. Aenean euismod bibendum laoreet"
+    },{
+        href:"typical.html",
+        date:"21 июня 2019",
+        title:"Заголовок новости в одну или две строки",
+        text:"Lorem ipsum dolor sit amet"
+    },{
+        href:"typical.html",
+        img:"3",
+        date:"21 июня 2019",
+        title:"Заголовок новости в одну",
+        text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet"
+    }]
+
++b('section').blog-list-module
+    each item,index in posts
+        +e.item(href=item.href,title=item.title)
+            +e.col._img
+                +object_fit({src:`media/news/news${item.img ? item.img : index+1}.jpg`,lazy:true})
+            +e.col._content
+                +e.P.date(class=(!index ? "p4" : "p5"))=item.date
+                +e.wrapper
+                    +e(`${!index ? 'h3' : 'h4'}`).title=item.title
+                    +e.P.text(class=(!index ? "p3" : "p4"))=item.text

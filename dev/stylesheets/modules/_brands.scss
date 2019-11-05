@@ -1,0 +1,30 @@
+.brands {
+    background-color: $gray3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 69px;
+    &__list-wrapper {
+        flex: 1 0 auto;
+        margin-left: 38px;
+    }
+    .color-picker {
+        max-width: none;
+    }
+    @include media_1500 {
+        padding: 16px 36px;
+    }
+    @include media_900 {
+        padding: 11px 24px;
+        &__list-wrapper {
+            margin-left: 26px;
+        }
+    }
+    @include media_900 {
+        border: 1px solid $gray5;
+    }
+    @include media_550 {
+        position: relative;
+        padding: 10px 26px 10px 46px;
+    }
+}

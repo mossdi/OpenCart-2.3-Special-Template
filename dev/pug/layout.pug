@@ -1,0 +1,18 @@
+include ../../node_modules/bemto.pug/bemto
+include mixins/head.pug
+include mixins/mixins.pug
+
+block variables
+
+doctype html
+html(lang='ru')
+    +head('Title')
+    body
+        include modules/header
+        +b.content(class= main ? "_main" : "")
+            .container
+                block content
+        include modules/footer
+        include modules/popups
+        include modules/loader
+        script(src="js/bundle.js")

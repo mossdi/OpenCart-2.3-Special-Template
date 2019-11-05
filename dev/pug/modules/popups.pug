@@ -1,0 +1,110 @@
++b.overlay.js-overlay(class="" + (popup ? " _active" : ""))
+    
++b.popup-style._subscribe.js-popup.js-popup-subscribe(class="" + (popup === "subscribe" ? " _active" : ""))
+    +e.content
+        +b.cross-btn.js-close-popup
+        +e.content-wrapper
+            +b.popup-subscribe
+                +e.col._img
+                +e.col._content
+                    +b('form').popup-form.js-form-adjuster.js-form-subscribe(action="form-handler.php")
+                        +e.H3.title Просто подпишись на нашу рассылку
+                        +e.column
+                            +e.item
+                                +input({name:"email",label:"E-mail*",mod:"required usermail",mod_wrap:"_small-label _black"})
+                            +e.item
+                                +btn({title:"подписаться",button:true})
+                            +e.item
+                                +checkbox({name:"privicy",value:"Y",mod:"required",label:'Нажимая "ПОДПИСАТЬСЯ", я соглашаюсь с <a href="pdf/confidentiality.pdf" target="_blank">политикой конфиденциальности</a>',mod_wrap:"_bordered"})
+
++b.popup-style._subscribe.js-popup.js-popup-subscribe-thx.js-popup-type-thx(class="" + (popup === "subscribe-thx" ? " _active" : ""))
+    +e.content
+        +b.cross-btn.js-close-popup
+        +e.content-wrapper
+            +b.popup-subscribe._thx
+                +e.col._img
+                +e.col._content
+                    +e.H3.title Спасибо, что подписались!
+
++b.popup-style._auth.js-popup.js-popup-auth(class="" + (popup === "auth" ? " _active" : ""))
+    +e.content
+        +b.cross-btn._white.js-close-popup
+        +e.content-wrapper
+            +b.auth-popup
+                +e.nav
+                    +e.nav-item.h3.js-auth-nav(class="  _active") вход
+                        +e.nav-line
+                    +e.nav-item.h3.js-auth-nav РЕГИСТРАЦИЯ
+                        +e.nav-line
+                +b.auth-popup-body.js-auth-slider
+                    +e.item
+                        +b('form').popup-form._auth.js-form-adjuster(action="form-handler.php")
+                            +e.column
+                                +e.item
+                                    +input({name:"email",label:"E-mail*",mod:"required usermail",mod_wrap:"_small-label _black"})
+                                +e.item
+                                    +input({name:"password",label:"Пароль*",mod:"required",mod_wrap:"_small-label _black",type:"password"})
+                                +e.item
+                                    +checkbox({name:"remember",value:"Y",label:"Запомнить меня",mod_wrap:"_bordered"})
+                                +e.item
+                                    +btn({title:"ВОЙТИ В ЛИЧНЫЙ КАБИНЕТ",button:true})
+                                    +btn({title:"Забыли пароль?",href:"reset-password.html",mod:"_transparent"})
+
+                    +e.item
+                        +b('form').popup-form._auth.js-form-adjuster(action="form-handler.php")
+                            +e.column
+                                +e.item
+                                    +input({name:"name",label:"Имя*",mod:"required",mod_wrap:"_small-label _black"})
+                                +e.item
+                                    +input({name:"surname",label:"Фамилия*",mod:"required",mod_wrap:"_small-label _black"})
+                                +e.item
+                                    +input({name:"phone",label:"Контактный телефон*",mod:"userphone required",mod_wrap:"_small-label _black"})
+                                +e.item
+                                    +input({name:"email",label:"E-mail*",mod:"required usermail",mod_wrap:"_small-label _black"})
+                                +e.item
+                                    +input({name:"password",label:"Пароль*",mod:"required password",mod_wrap:"_small-label _black"})
+                                +e.item
+                                    +input({name:"passwordRepeat",label:"Повторите пароль*",mod:"required passwordConfirm",mod_wrap:"_small-label _black"})
+                                +e.item
+                                    +checkbox({name:"subscribe",value:"Y",label:"Получать рассылку от SHOPRUKZAK",mod_wrap:"_bordered"})
+                                    +checkbox({name:"privicy",value:"Y",mod:"required",label:"Согласие с политикой конфиденциальности",mod_wrap:"_bordered"})
+                                +e.item
+                                    +btn({title:"ЗАРЕГИСТРИРОВАТЬСЯ",button:true})
+
++b.popup-style._small.js-popup.js-popup-request-thx.js-popup-type-thx(class="" + (popup === "request-thx" ? " _active" : ""))
+    +e.content
+        +b.cross-btn.js-close-popup
+        +e.content-wrapper
+                +e.H2.title Ваша заявка отправлена!
+                +e.P.subtitle.p1 В ближайшее время с вами свяжется менеджер.
+
++b.popup-style._small.js-popup.js-popup-message-thx.js-popup-type-thx(class="" + (popup === "message-thx" ? " _active" : ""))
+    +e.content
+        +b.cross-btn.js-close-popup
+        +e.content-wrapper
+                +e.H2.title ваше сообщение отправлено!
+                +e.P.subtitle.p1 В ближайшее время с вами свяжется менеджер.
+
++b.popup-style._add-to-cart.js-popup.js-popup-add-to-cart(class="" + (popup === "add-to-cart" ? " _active" : ""))
+    +e.content
+        +b.cross-btn.js-close-popup
+        +e.content-wrapper.js-added-to-cart-inner
+            //-+b.added-to-cart-popup
+                //- +e.H3.title ТОВАР ДОБАВЛЕН В КОРЗИНУ
+                //- +e.row
+                //-     +e.col._img
+                //-         +object_fit({src:"media/product/ashwood.jpg",mod:"_contain"})
+                //-     +e.col._content
+                //-         +e.H4.name ASHWOOD
+                //-         +e.P.description.p4 Рюкзак Ashwood Leather 1663 Chestnut
+                //-         +e.P.params.p4(data-title="Цвет:") Чёрный
+                //- +e.row-btn
+                //-     +e.btn-item
+                //-         +btn({title:"продолжить покупки",mod:"_small _medium-gray js-close-popup"})
+                //-     +e.btn-item
+                //-         +btn({title:"оформить заказ",href:"cart.html",mod:"_small"})
+
++b.popup-style._quick-view.js-popup.js-popup-quick-view
+    +e.content
+        +b.cross-btn.js-close-popup
+        +e.content-wrapper.js-prod-popup

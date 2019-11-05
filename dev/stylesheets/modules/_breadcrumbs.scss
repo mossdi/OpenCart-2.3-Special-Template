@@ -1,0 +1,52 @@
+.breadcrumbs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 34px 0;
+    &__item {
+        display: flex;
+        align-items: center;
+        &:after {
+            content: "\e90b";
+            display: block;
+            transform: rotate(-90deg);
+            margin-left: 9px;
+            margin-right: 6px;
+            font-family: $ico-font;
+            color: $black;
+            font-size: 8px;
+            line-height: 1;
+        }
+        &:last-child {
+            &:after {
+                content: none;
+            }
+        }
+    }
+    &__link {
+        transition: 0.3s ease;
+        padding: 5px 0;
+        color: $black;
+        text-decoration: underline;
+        &:hover {
+            color: $orange;
+        }
+    }
+    @include media_1500 {
+        padding: 12px 0 29px;
+        &__item {
+            &:after {
+                margin-left: 12px;
+                margin-right: 10px;
+            }
+        }
+    }
+    @include media_900 {
+        padding-top: 0;
+    }
+    @include media_550 {
+        &__link {
+            font-size: 12px;
+        }
+    }
+}

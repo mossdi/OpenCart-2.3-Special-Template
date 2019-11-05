@@ -1,0 +1,135 @@
+.mainslider {
+    padding-bottom: 143px;
+    &__slide {
+        position: relative;
+    }
+    &__text-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(19, 19, 19, 0.88);
+        padding: 65px 74px 49px;
+        text-align: center;
+        color: $white;
+    }
+    &__title {
+        transition: color 0.5s ease;
+        color: rgba(255, 255, 255, 0);
+        &:after {
+            content: "";
+            display: block;
+            width: 75%;
+            height: 2px;
+            transform: scaleX(0);
+            transition: 0.4s ease 0.1s;
+            background: $white;
+            margin: 12px auto 21px;
+        }
+    }
+    &__subtitle {
+        transform: translateY(10px);
+        color: rgba(255, 255, 255, 0);
+        transition: 0.5s ease 0.2s;
+    }
+    .object-fit-wrap {
+        &:after {
+            padding-top: 51.7%;
+        }
+    }
+    .slick-dots {
+        bottom: 94px;
+    }
+    &__slide.slick-active & {
+        &__title {
+            color: rgba(255, 255, 255, 1);
+            &:after {
+                transform: scaleX(1);
+            }
+        }
+        &__subtitle {
+            transform: translateY(0);
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+    @include slider-preload(&, "slide");
+    @include media_1500 {
+        padding-bottom: 124px;
+        .object-fit-wrap {
+            &:after {
+                padding-top: 47.5%;
+            }
+        }
+        &__text-container {
+            padding: 39px 58px 45px;
+        }
+        &__title {
+            &:after {
+                width: 83%;
+                margin: 15px auto 15px;
+            }
+        }
+        .slick-dots {
+            bottom: 85px;
+        }
+    }
+    @include media_1200 {
+        padding-bottom: 109px;
+        .object-fit-wrap {
+            &:after {
+                padding-top: 52.8%;
+            }
+        }
+        &__text-container {
+            padding: 39px 42px 40px;
+        }
+        &__title {
+            &:after {
+                margin: 7px auto 13px;
+            }
+        }
+        .slick-dots {
+            bottom: 74px;
+        }
+    }
+    @include media_900 {
+        padding-bottom: 78px;
+        .object-fit-wrap {
+            &:after {
+                padding-top: 58.4%;
+            }
+        }
+        &__text-container {
+            padding: 23px 47px 29px;
+        }
+        &__title {
+            min-width: 315px;
+        }
+        .slick-dots {
+            bottom: 43px;
+        }
+    }
+    @include media_550 {
+        padding-bottom: 83px;
+        .object-fit-wrap {
+            &:after {
+                padding-top: 142.4%;
+            }
+        }
+        &__text-container {
+            width: calc(100% - 30px);
+            max-width: 250px;
+            padding: 19px 10px 22px;
+        }
+        &__title {
+            min-width: 0;
+            &:after {
+                width: 90%;
+                margin: 9px auto 9px;
+            }
+        }
+        .slick-dots {
+            bottom: 53px;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.purchase-returns {
+    background: $gray3 url("../images/return.jpg") no-repeat right bottom;
+    padding: 76px 0 79px;
+    &__content {
+        width: 66%;
+        margin: 0 auto;
+    }
+    &__title {
+        text-align: center;
+    }
+    .form-style {
+        margin-top: 51px;
+    }
+    @include media_1500 {
+        background-size: 524px 621px;
+        &__content {
+            width: 100%;
+            max-width: 680px;
+        }
+        .form-style {
+            margin-top: 44px;
+        }
+    }
+    @include media_1200 {
+        padding: 57px 0 59px;
+        .form-style {
+            margin-top: 57px;
+        }
+    }
+    @include media_900 {
+        &__content {
+            width: 85%;
+            max-width: none;
+        }
+        .form-style {
+            margin-top: 44px;
+        }
+    }
+    @include media_550 {
+        background-image: none;
+        padding: 48px 28px 46px;
+        &__title {
+            text-align: left;
+        }
+        &__content {
+            width: 100%;
+        }
+        .form-style {
+            margin-top: 27px;
+        }
+    }
+}

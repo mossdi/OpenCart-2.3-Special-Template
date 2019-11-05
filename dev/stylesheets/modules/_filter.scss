@@ -1,0 +1,207 @@
+.filter {
+    background-color: $gray3;
+    width: 100%;
+    padding: 31px 62px;
+    &__item {
+        margin-top: 24px;
+        &_controls {
+            margin-top: 43px;
+        }
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    &__check-list {
+        margin-top: 15px;
+    }
+    &__check-item {
+        margin-top: 3px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    .show-more {
+        margin-top: 2px;
+    }
+    .range-block {
+        margin-top: 28px;
+    }
+    &__btn-wrapper {
+        margin: 5px 0;
+        .btn-style {
+            width: 100%;
+        }
+    }
+    .cross-btn {
+        position: absolute;
+        right: 11px;
+        top: 9px;
+        display: none;
+        width: 34px;
+        height: 34px;
+    }
+    .range-block {
+        .input-style {
+            &__input {
+                padding: 0 8px 0;
+            }
+        }
+    }
+
+    @include media_1500 {
+        padding: 31px 35px;
+        &__item {
+            margin-top: 27px;
+            &_controls {
+                margin-top: 38px;
+            }
+        }
+        &__check-item {
+            margin-top: 6px;
+        }
+        .show-more {
+            margin-top: 5px;
+        }
+    }
+    @include media_1200 {
+        overflow: auto;
+        height: 100%;
+        max-height: 100%;
+        padding-bottom: 0;
+        &__content {
+            padding-bottom: 161px;
+        }
+        .cross-btn {
+            display: block;
+        }
+        &__item {
+            &_controls {
+                z-index: 11;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.05);
+                background-color: $gray3;
+                width: 100%;
+                margin-top: 0;
+                padding: 19px 38px 20px;
+            }
+        }
+        .price-block {
+            .input-style {
+                &__input {
+                    font-size: 14px !important;
+                }
+            }
+        }
+    }
+    @include media_900 {
+        padding: 0;
+        &__content {
+            padding: 48px 61px 150px;
+        }
+        .cross-btn {
+            right: 21px;
+            top: 19px;
+        }
+        &__item {
+            margin-top: 24px;
+            &_controls {
+                padding: 19px 62px 20px;
+            }
+        }
+        &__check-list {
+            margin-top: 13px;
+        }
+        &__check-item {
+            margin-top: 7px;
+        }
+        .range-block {
+            margin-top: 35px;
+        }
+    }
+    @include media_550 {
+        &__content {
+            padding: 48px 63px 150px;
+        }
+        &__check-list {
+            margin-top: 16px;
+        }
+    }
+}
+.irs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    .irs-line {
+        top: 0;
+        background-color: $white;
+        height: 2px;
+        width: 100%;
+    }
+    .irs-bar {
+        top: 0;
+        background-color: $gray2;
+        height: 2px;
+    }
+    .irs-handle {
+        top: -6px;
+        border-radius: 50%;
+        background-color: $gray2;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        i {
+            display: none !important;
+        }
+        &:hover,
+        &:focus {
+            background-color: $orange;
+        }
+    }
+    .irs-min,
+    .irs-max {
+        position: relative;
+        background-color: transparent;
+        padding: 0;
+        margin-top: 27px;
+        color: $black;
+        font-family: $montserrat;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.58;
+    }
+    @include media_1500 {
+        .irs-min,
+        .irs-max {
+            margin-top: 28px;
+            font-size: 12px;
+        }
+    }
+}
+.range-block {
+    &__input-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 18px;
+        .input-style {
+            width: calc(50% - 14px);
+        }
+    }
+    &__separator {
+        display: block;
+        background-color: $gray2;
+        width: 11px;
+        height: 1px;
+    }
+    @include media_1500 {
+        &__input-row {
+            margin-top: 20px;
+        }
+    }
+}

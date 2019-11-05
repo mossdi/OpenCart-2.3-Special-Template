@@ -1,0 +1,32 @@
+-
+    requisites = [{
+        label:"Номер счета",
+        text:"40802810054400025999"
+    },{
+        label:"ИНН",
+        text:"632500983933"
+    },{
+        label:"ОГРНИП",
+        text:"318631300196799"
+    },{
+        label:"Банк",
+        text:"МОСКОВСКИЙ БАНК ПАО СБЕРБАНК"
+    },{
+        label:"БИК",
+        text:"043601607"
+    },{
+        label:"Юридический адрес",
+        text:"443026, Российская Федерация, г. Москва, </br>ул. Неизвестная 57"
+    }]
+
++b('section').requisites
+    +e.content
+        +e.H2.title Реквизиты компании
+        +e.P.position.p2 Индивидуальный предприниматель
+        +e.P.name.p2 Иванов Иван Иванович
+        +b.requisites-list
+            each item in requisites
+                +e.item
+                    if item.label
+                        +e.P.label.p4=item.label
+                    +e.P.text.p2!=item.text
